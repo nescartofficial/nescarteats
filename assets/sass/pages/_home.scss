@@ -1,0 +1,23 @@
+/* Download */
+.download .card {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='603.09' viewBox='0 0 1640 603.09'%3E%3Cpath id='Path_24' data-name='Path 24' d='M75.415 135.107 1564.585 0C1606.236 0 1640 35.968 1640 80.337V522.753c0 44.369-33.764 80.336-75.414 80.336H75.415C33.764 603.09 0 567.122 0 522.753V215.443C0 171.074 33.764 135.107 75.415 135.107Z' fill='%23ef9244'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.download .card .row.card-body {
+  height: 600px;
+}
+.download-mobile {
+  position: absolute;
+  width: auto;
+  left: -7rem;
+  top: -1.2rem;
+  height: 620px;
+}
+.download-pizza {
+  position: absolute;
+  width: 500px;
+  top: -2rem;
+  right: -1.5rem;
+}

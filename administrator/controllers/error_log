@@ -1,0 +1,16 @@
+[25-Jul-2022 16:03:32 Africa/Lagos] PHP Warning:  explode() expects parameter 2 to be string, array given in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 212
+[25-Jul-2022 16:25:04 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$data in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 46
+[25-Jul-2022 16:25:04 Africa/Lagos] PHP Notice:  Undefined variable: data in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 57
+[25-Jul-2022 16:30:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$data in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 46
+[25-Jul-2022 16:35:22 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$data in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 46
+[25-Jul-2022 16:37:09 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$data in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 46
+[25-Jul-2022 16:37:09 Africa/Lagos] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 47
+[25-Jul-2022 16:37:27 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$data in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 46
+[25-Jul-2022 16:37:27 Africa/Lagos] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 48
+[25-Jul-2022 16:37:30 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$data in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 46
+[25-Jul-2022 16:37:30 Africa/Lagos] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 48
+[26-Jul-2022 13:03:08 Africa/Lagos] PHP Notice:  Undefined variable: found in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 241
+[26-Jul-2022 13:03:08 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 241
+[26-Jul-2022 13:39:32 Africa/Lagos] PHP Notice:  Undefined variable: image in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 188
+[26-Jul-2022 13:39:32 Africa/Lagos] PHP Notice:  Undefined variable: sfound in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 190
+[26-Jul-2022 13:39:32 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 190

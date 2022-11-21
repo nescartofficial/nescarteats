@@ -1,0 +1,7 @@
+/*Copyright (C) 2017 Nicola Zambello
+*https://github.com/nzambello/ellipsed
+*/
+function tokensReducer(e,n){const{el:t,elStyle:i,elHeight:r,rowsLimit:o,rowsWrapped:l,options:s}=e;let d=e.buffer,p=d;if(l===o+1)return{...e};const c=d;let a=l,u=r;return t.innerHTML=p=d.length?`${d}${s.delimiter}${n}${s.replaceStr}`:`${n}${s.replaceStr}`,parseFloat(i.height)>parseFloat(r)&&(a++,u=i.height,a===o+1)?(t.innerHTML=p="."===c[c.length-1]&&"..."===s.replaceStr?`${c}..`:`${c}${s.replaceStr}`,{...e,elHeight:u,rowsWrapped:a}):(t.innerHTML=p=c.length?`${c}${s.delimiter}${n}`:`${n}`,{...e,buffer:p,elHeight:u,rowsWrapped:a})}function ellipsis(e="",n=1,t={}){const i={replaceStr:"...",responsive:!1,debounceDelay:250,delimiter:" ",...t},r=e&&(e instanceof NodeList?e:1===e.nodeType?[e]:document.querySelectorAll(e)),o=[];for(let e=0;e<r.length;e++){const t=r[e];o[e]=t.innerHTML;const l=t.innerHTML.split(i.delimiter);t.innerHTML="";const s=window.getComputedStyle(t);l.reduce(tokensReducer,{el:t,buffer:t.innerHTML,elStyle:s,elHeight:0,rowsLimit:n,rowsWrapped:0,options:i})}if(i.responsive){let l=!1,s=window.innerWidth;const d=()=>{if(window.innerWidth!==s){s=window.innerWidth;for(let e=0;e<r.length;e++)r[e].innerHTML=o[e];ellipsis(e,n,{...t,responsive:!1})}},p=()=>{clearTimeout(l),l=setTimeout(d,i.debounceDelay)};return window.addEventListener("resize",p),p}}function disableResponsive(e){window.removeEventListener("resize",e)}
+
+ellipsis(".text-truncate-2", 2);
+// export { disableResponsive, ellipsis };

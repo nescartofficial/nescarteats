@@ -1,0 +1,24 @@
+/* [1] The container */
+.img-hover-zoom {
+  border-radius: var(--bs-border-radius) !important;
+  // height: 300px; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+
+  img {
+      transition: all 0.8s ease-in-out;
+    &:hover {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+}
+
+/* [2] Transition property for smooth transformation of images */
+// .img-hover-zoom img {
+//   transition: transform 0.5s ease;
+// }
+
+// /* [3] Finally, transforming the image when container gets hovered */
+// .img-hover-zoom:hover img {
+//   transform: scale(1.5);
+// }

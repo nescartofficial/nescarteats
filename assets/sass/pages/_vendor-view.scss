@@ -1,0 +1,16 @@
+.vendor {
+  &-introduction {
+    margin-bottom: 50px;
+    .cover {
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .logo {
+      height: 80px;
+      width: 80px;
+      border-radius: 5px;
+    }
+  }
+}

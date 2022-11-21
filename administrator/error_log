@@ -1,0 +1,262 @@
+[26-Jul-2022 13:30:53 Africa/Lagos] PHP Notice:  Undefined variable: profile in /home2/nescartc/public_html/eats/administrator/view/admin/special-category-menu.php on line 136
+[26-Jul-2022 13:55:45 Africa/Lagos] PHP Notice:  Undefined variable: profile in /home2/nescartc/public_html/eats/administrator/view/admin/special-category-menu.php on line 136
+[26-Jul-2022 13:55:49 Africa/Lagos] PHP Notice:  Undefined variable: profile in /home2/nescartc/public_html/eats/administrator/view/admin/special-category-menu.php on line 136
+[26-Jul-2022 14:12:02 Africa/Lagos] PHP Notice:  Undefined variable: profile in /home2/nescartc/public_html/eats/administrator/view/admin/special-category-menu.php on line 136
+[26-Jul-2022 14:12:08 Africa/Lagos] PHP Notice:  Undefined variable: profile in /home2/nescartc/public_html/eats/administrator/view/admin/special-category-menu.php on line 136
+[26-Jul-2022 14:13:42 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$categories in /home2/nescartc/public_html/eats/administrator/view/admin/specialcats.php on line 18
+[26-Jul-2022 14:13:42 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$menus in /home2/nescartc/public_html/eats/administrator/view/admin/specialcats.php on line 19
+[26-Jul-2022 14:13:42 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$vendors in /home2/nescartc/public_html/eats/administrator/view/admin/specialcats.php on line 20
+[26-Jul-2022 14:13:49 Africa/Lagos] PHP Notice:  Undefined variable: profile in /home2/nescartc/public_html/eats/administrator/view/admin/special-category-menu.php on line 136
+[26-Jul-2022 14:22:33 Africa/Lagos] PHP Notice:  Undefined variable: profile in /home2/nescartc/public_html/eats/administrator/view/admin/special-category-menu.php on line 136
+[26-Jul-2022 14:29:30 Africa/Lagos] PHP Notice:  Undefined variable: profile in /home2/nescartc/public_html/eats/administrator/view/admin/special-category-menu.php on line 136
+[26-Jul-2022 14:33:49 Africa/Lagos] PHP Notice:  Undefined variable: profile in /home2/nescartc/public_html/eats/administrator/view/admin/special-category-menu.php on line 136
+[26-Jul-2022 14:37:36 Africa/Lagos] PHP Notice:  Undefined variable: profile in /home2/nescartc/public_html/eats/administrator/view/admin/special-category-menu.php on line 136
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 382
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 383
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 394
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 382
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 383
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 394
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[01-Aug-2022 16:17:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 382
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 383
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 394
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 382
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 383
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 394
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 382
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 383
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 394
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:58:10 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 382
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 383
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 394
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 382
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 383
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 394
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 382
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 383
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 394
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 14:59:14 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 14:59:21 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 441
+[03-Aug-2022 14:59:21 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 453
+[03-Aug-2022 14:59:21 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 441
+[03-Aug-2022 14:59:21 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 453
+[03-Aug-2022 14:59:21 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 441
+[03-Aug-2022 14:59:21 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 453
+[03-Aug-2022 15:00:15 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 441
+[03-Aug-2022 15:00:15 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 453
+[03-Aug-2022 15:00:15 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 441
+[03-Aug-2022 15:00:15 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 453
+[03-Aug-2022 15:00:15 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 441
+[03-Aug-2022 15:00:15 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 453
+[03-Aug-2022 15:00:35 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 441
+[03-Aug-2022 15:00:35 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 453
+[03-Aug-2022 15:00:35 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 441
+[03-Aug-2022 15:00:35 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 453
+[03-Aug-2022 15:00:49 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 441
+[03-Aug-2022 15:00:49 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 453
+[03-Aug-2022 15:40:48 Africa/Lagos] PHP Warning:  Invalid argument supplied for foreach() in /home2/nescartc/public_html/eats/administrator/view/admin/products.php on line 159
+[03-Aug-2022 15:40:50 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 441
+[03-Aug-2022 15:40:50 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/vendors.php on line 453
+[03-Aug-2022 15:41:35 Africa/Lagos] PHP Warning:  Invalid argument supplied for foreach() in /home2/nescartc/public_html/eats/administrator/view/admin/products.php on line 159
+[03-Aug-2022 15:41:56 Africa/Lagos] PHP Warning:  Invalid argument supplied for foreach() in /home2/nescartc/public_html/eats/administrator/view/admin/products.php on line 159
+[03-Aug-2022 15:42:08 Africa/Lagos] PHP Warning:  Invalid argument supplied for foreach() in /home2/nescartc/public_html/eats/administrator/view/admin/products.php on line 159
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[03-Aug-2022 15:53:00 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$details in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 254
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$payment_type in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 265
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 271
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$created in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 284
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$details in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 254
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$payment_type in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 265
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 271
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$created in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 284
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 382
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 383
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 394
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:19:58 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$details in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 254
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$payment_type in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 265
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 271
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$created in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 284
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$details in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 254
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$payment_type in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 265
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 271
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$created in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 284
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 382
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 383
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 394
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Trying to get property 'image' of non-object in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 424
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 430
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$first_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$last_name in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 436
+[09-Aug-2022 13:21:21 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home2/nescartc/public_html/eats/administrator/view/admin/dashboard.php on line 438

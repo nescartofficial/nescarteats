@@ -1,0 +1,18 @@
+.slideshow-component {
+  img {
+    height: 135px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .slideshow-component {
+    img {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

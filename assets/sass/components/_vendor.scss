@@ -1,0 +1,62 @@
+.vendor-component {
+  &.list {
+    .item {
+      max-width: 110px;
+      img {
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+        margin: auto;
+      }
+    }
+  }
+
+  &.single {
+    .item {
+      img {
+        height: 180px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .vendor-component {
+    &.list {
+      .item {
+        max-width: 220px;
+        img {
+          height: 150px;
+          width: 100%;
+          object-fit: cover;
+          margin: auto;
+        }
+
+        .title {
+          font-size: 20px;
+        }
+
+        .location {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &.single {
+      .item {
+        img {
+          height: 180px;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        .title {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

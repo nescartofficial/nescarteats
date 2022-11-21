@@ -1,0 +1,105 @@
+/* Designs */
+.dashboard .card-body {
+  padding: 30px;
+}
+.dashboard .sidebar a.list-group-item.list-group-item-action {
+  border: 0;
+  /*margin-bottom: 0.5rem;*/
+  font-weight: 500;
+}
+.dashboard .card {
+  -webkit-box-shadow: 0 0.5rem 1rem rgb(197 197 197 / 10%) !important;
+  box-shadow: 0 0.5rem 1rem rgb(197 197 197 / 10%) !important;
+}
+.dashboard .sidebar a.list-group-item.list-group-item-action:hover {
+  background: var(--color-primary);
+  color: white;
+  border-radius: 0.6rem;
+}
+.dashboard.sidebar a.list-group-item.list-group-item-action:hover .icon-menu {
+  filter: invert(1);
+}
+.dashboard .sidebar a.list-group-item.list-group-item-action.active {
+  background: var(--color-accent);
+  border: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  font-weight: 500;
+  border-radius: 0.6rem;
+}
+.dashboard .sidebar a.list-group-item.list-group-item-action.active .icon-menu {
+  filter: invert(1);
+}
+.br-2p {
+  border-radius: 2px;
+}
+.badge-primary {
+  background-color: var(--color-accent);
+}
+.page-link:hover {
+  color: var(--color-accent);
+}
+.page-item.active .page-link {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Reset */
+.shadow {
+  -webkit-box-shadow: 0 0.5rem 1rem rgb(197 197 197 / 10%) !important;
+  box-shadow: 0 0.5rem 1rem rgb(197 197 197 / 10%) !important;
+}
+.card.stats .card-body {
+  padding: 15px;
+}
+.form-label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.form-control {
+  color: var(--mp-black);
+  font-size: 1rem;
+}
+
+/* Breakpoints */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
+
+/* // `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+}
+
+/* // `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+}
+
+/* // `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+}
+
+/* // `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+}
+
+/* // `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}

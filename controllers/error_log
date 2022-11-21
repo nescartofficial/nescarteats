@@ -1,0 +1,10 @@
+[04-Aug-2022 15:21:39 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/controllers/checkout.php on line 130
+[04-Aug-2022 15:21:52 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/controllers/checkout.php on line 130
+[04-Aug-2022 16:34:16 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/controllers/checkout.php on line 130
+[04-Aug-2022 16:42:58 Africa/Lagos] PHP Notice:  Array to string conversion in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 191
+[04-Aug-2022 16:47:28 Africa/Lagos] PHP Notice:  Undefined variable: v in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 228
+[04-Aug-2022 16:47:28 Africa/Lagos] PHP Notice:  Undefined variable: v in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 229
+[04-Aug-2022 16:47:28 Africa/Lagos] PHP Notice:  Undefined variable: v in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 230
+[04-Aug-2022 16:47:28 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$name in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 254
+[04-Aug-2022 16:51:25 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$name in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 255
+[04-Aug-2022 16:51:25 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$name in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 255

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43">
+  <g id="Notifications_Header" data-name="Notifications Header" transform="translate(-6113 -739)">
+    <rect id="Rectangle_47" data-name="Rectangle 47" width="43" height="43" rx="6" transform="translate(6113 739)" fill="#ffd1cc"/>
+    <path id="Notifications" d="M19.267,15.886H4.072L2,17.958v.691l.691.691H8.907a2.763,2.763,0,0,0,5.526,0h6.216l.691-.691v-.691Zm-.691-5.526a6.906,6.906,0,0,0-4.144-6.328V2.763a2.763,2.763,0,0,0-5.526,0V4.032A6.906,6.906,0,0,0,4.763,10.36V15.2H18.577Zm-8.288-7.6a1.381,1.381,0,1,1,2.763,0Z" transform="translate(6123 749.711)"/>
+  </g>
+</svg>

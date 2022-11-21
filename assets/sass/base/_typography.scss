@@ -1,0 +1,94 @@
+/* Font & Sizes */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Serif", serif;
+  color: var(--color-black);
+  font-family: serif;
+  font-weight: 700;
+  &.ff-none {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+p {
+  font-size: 18px;
+}
+
+.fs {
+  &-10p {
+    font-size: 10px !important;
+  }
+  &-12p {
+    font-size: 12.8px !important;
+  }
+  &-14p {
+    font-size: 14px !important;
+  }
+  &-16p {
+    font-size: 16px !important;
+  }
+  &-18p {
+    font-size: 18px !important;
+  }
+  &-20p {
+    font-size: 20px !important;
+  }
+  &-24p {
+    font-size: 24px !important;
+  }
+  &-heading {
+    font-size: 4rem;
+    line-height: 1;
+
+    &--md {
+      font-size: 3.1rem;
+      line-height: 1;
+    }
+    &--sm {
+      font-size: 2.8rem;
+      line-height: 1;
+    }
+  }
+
+  &-secondary {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+}
+
+/* Mins */
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  /* font/sizine */
+  .fs {
+    &-heading {
+      font-size: 3.3rem;
+
+      &--md {
+        font-size: 2.3rem;
+      }
+      &--sm {
+        font-size: 2.1rem;
+      }
+    }
+  }
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .fs {
+    &-heading {
+      font-size: 3rem;
+
+      &--md {
+        font-size: 2.3rem;
+      }
+      &--sm {
+        font-size: 2.1rem;
+      }
+    }
+  }
+}

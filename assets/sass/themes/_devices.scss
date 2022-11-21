@@ -1,0 +1,78 @@
+/* Maxes */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+// Small screens like grace & blessing.
+@media (min-width: 1300px) and (max-width: 1400px) { 
+  .container{
+    min-width: 1240px;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .card-body {
+    padding: 80px;
+  }
+  .card-body.sm-padding {
+    padding: 50px;
+  }
+}
+
+/* Mins */
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  /* Hero */
+  .hero {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .vendor {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .hero-features {
+    margin-top: 60px;
+  }
+  /* DOwnload */
+  .download .card {
+    background: none;
+    background-color: var(--color-accent);
+  }
+
+  section.sign-up .side-image,
+  section.sign-in .side-image {
+    background-size: cover;
+    min-height: 45vh !important;
+  }
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+}
+
+/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}

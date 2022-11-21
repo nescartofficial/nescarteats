@@ -1,0 +1,15 @@
+.pg-find-vendors {
+  .search-header {
+    .form-control,
+    .form-select {
+      &:hover,
+      &:focus {
+        border: 0 !important;
+      }
+    }
+    select#state {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+/* Sign up */
+section.sign-up .side-image,
+section.sign-in .side-image {
+  background-image: url("../images/Sign Up.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section.sign-in .side-image {
+  background-image: url("../images/Sign In.png");
+}
+section.sign-up img.logo,
+section.sign-in img.logo {
+  width: 40%;
+  display: block;
+  margin: auto;
+}

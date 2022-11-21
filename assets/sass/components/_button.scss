@@ -1,0 +1,33 @@
+.btn {
+  padding: 0.7rem 2rem;
+  background-color: var(--color-accent);
+  color: black;
+  font-weight: 550 !important;
+  &:hover {
+    background-color: var(--color-accent) !important;
+    color: black !important;
+    font-weight: 550 !important;
+    border-color: var(--color-accent);
+  }
+
+  &-primary {
+    background-color: var(--color-primary);
+    color: white;
+    &:hover {
+      color: white !important;
+    }
+  }
+
+  &-outline {
+    &-accent,
+    &-danger {
+      border-color: var(--color-accent) !important;
+      background-color: transparent !important;
+      // color: black !important;
+
+      &.active {
+        background-color: var(--color-accent) !important;
+      }
+    }
+  }
+}

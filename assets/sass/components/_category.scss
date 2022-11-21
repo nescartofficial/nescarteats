@@ -1,0 +1,34 @@
+.category-component {
+  &.list {
+    .item {
+      max-width: 110px;
+      img {
+        height: 105px;
+        width: 100%;
+        object-fit: cover;
+        margin: auto;
+      }
+    }
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .category-component {
+    &.list {
+      .item {
+        max-width: 220px;
+        img {
+          height: 140px;
+          width: 100%;
+          object-fit: cover;
+          margin: auto;
+        }
+
+        .title {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

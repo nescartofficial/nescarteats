@@ -1,0 +1,12 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin rounded-shadow {
+  border-radius: 100%;
+  box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.1);
+}

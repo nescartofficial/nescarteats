@@ -1,0 +1,83 @@
+.menu-component {
+  &.list {
+    .item {
+      .slick {
+        &-list {
+          padding: 0 !important;
+        }
+        &-slide {
+          margin-right: 0;
+        }
+      }
+
+      img {
+        height: 140px;
+        width: 100%;
+        object-fit: cover;
+        margin: auto;
+      }
+    }
+  }
+
+  &.list-slide {
+    .item {
+      img {
+        height: 68px;
+        width: 68px;
+        object-fit: cover;
+        margin: auto;
+      }
+      .body {
+        max-width: 60%;
+      }
+    }
+  }
+}
+
+// Modal
+#menuModal {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .menu-component {
+    &.list {
+      .item {
+        img {
+          height: 180px;
+          width: 100%;
+          object-fit: cover;
+          margin: auto;
+        }
+        .body {
+          .title {
+            font-size: 20px;
+          }
+          .location {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    &.list-slide {
+      .item {
+        max-width: 420px;
+        img {
+          height: 120px;
+          width: 120px;
+          object-fit: cover;
+          margin: auto;
+        }
+        .body {
+          .title {
+            font-size: 20px;
+          }
+          .location {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

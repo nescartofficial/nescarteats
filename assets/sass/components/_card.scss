@@ -1,0 +1,25 @@
+.card {
+  border: 0;
+  border-radius: 25px;
+}
+
+.dashboard {
+  .card {
+    -webkit-box-shadow: 0 0.5rem 1rem rgb(197 197 197 / 10%) !important;
+    box-shadow: 0 0.5rem 1rem rgb(197 197 197 / 10%) !important;
+
+    &.no-shadow {
+      box-shadow: none !important;
+    }
+  }
+
+  .card-body {
+    padding: 30px;
+  }
+
+  &.vendor {
+    .card-body {
+      padding: 22px;
+    }
+  }
+}
