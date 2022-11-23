@@ -10,12 +10,10 @@ $OrderDetails = new General('order_details');
 $profile = $User->getProfile();
 
 $order = Input::get('sub') && is_numeric(Input::get('sub')) ? $Orders->get(Input::get('sub'), 'invoice') : null;
+$address = $order ? $order->delivery_address : null;
 $order_details = $order ? $OrderDetails->getAll($order->order_id, 'order_id', '=') : null;
 
-$status = $order->status == 1 ? 'Pending' : null;
-$status = $order->status == 2 ? 'Awaiting Delivery' : $status;
-$status = $order->status == 3 || $order->acknowledge_delivery ? 'Completed' : $status;
-$status = $order->status == 0 ? 'Rejected' : $status;
+$order_status = $order->status;
 
 $us = $User->get($order->user_id);
 // $order_details = json_decode($order->details);
@@ -150,10 +148,7 @@ Alerts::displaySuccess();
 
                     <div class="list-group h-100">
                         <div class="list-group-item list-group-action rounded">
-                            <?= $us->first_name . ' ' . $us->last_name; ?><br />
-                            <?= $profile ? $profile->address : 'No Address'; ?><br />
-                            <?= $profile ? $World->getCityName($profile->city) : 'No City'; ?><br />
-                            <?= $profile ? $World->getStateName($profile->state) . ', ' . $World->getCountryName($profile->country) : 'No State and Country'; ?>
+                            <?= $address ? $address : 'No Address'; ?><br />
                         </div>
                     </div>
                 </section>
@@ -167,13 +162,19 @@ Alerts::displaySuccess();
                     <div class="list-group-item list-group-action rounded">
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="">
-                                <p class="fw-bold mb-0"><?= ucwords($status) ?></p>
+                                <p class="fw-bold mb-0"><?= ucwords($order_status) ?></p>
                                 <?php if ($order->delivery_date) { ?>
                                     <?= date_format(date_create($order->delivery_date), 'M d, Y'); ?>
                                 <?php } ?>
                             </div>
 
-                            <?php if (ucwords($status) == 'Delivered') { ?>
+                            <?php if (ucwords($order_status) == 'Delivered') { ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 65 65">
+                                    <path id="checkbox-checked" d="M56.875,0H8.125A8.149,8.149,0,0,0,0,8.125v48.75A8.149,8.149,0,0,0,8.125,65h48.75A8.149,8.149,0,0,0,65,56.875V8.125A8.149,8.149,0,0,0,56.875,0ZM28.438,50.432l-15.06-15.06,5.744-5.744,9.315,9.315L47.909,19.472l5.744,5.744L28.438,50.432Z" fill="#008e8c" />
+                                </svg>
+                            <?php } ?>
+                            
+                            <?php if (ucwords($order_status) == 'Cancelled') { ?>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 65 65">
                                     <path id="checkbox-checked" d="M56.875,0H8.125A8.149,8.149,0,0,0,0,8.125v48.75A8.149,8.149,0,0,0,8.125,65h48.75A8.149,8.149,0,0,0,65,56.875V8.125A8.149,8.149,0,0,0,56.875,0ZM28.438,50.432l-15.06-15.06,5.744-5.744,9.315,9.315L47.909,19.472l5.744,5.744L28.438,50.432Z" fill="#008e8c" />
                                 </svg>
@@ -185,8 +186,10 @@ Alerts::displaySuccess();
 
             <!-- Action -->
             <section class="mb-5">
-                <?php if (ucwords($status) == 'Pending') { ?>
-                    <a href="javascript:;" class="btn d-block">Cancel Order</a>
+                <?php if (ucwords($order_status) == 'Pending') { ?>
+                    <a href="controllers/orders.php?rq=cancel-order&id=<?= $order->id ?>" class="btn d-block">Cancel Order</a>
+                <?php }else if (ucwords($order_status) == 'Cancelled') { ?>
+                    
                 <?php } else { ?>
                     <a href="javascript:;" class="btn d-block">Reorder</a>
                 <?php } ?>

@@ -1,8 +1,13 @@
 <script src="assets/vendors/jquery-3.3.1.min.js"></script>
 <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<!--<script src="https://unpkg.com/flickity-fullscreen@2/fullscreen.js"></script>-->
+
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 <script type="text/javascript" src="assets/vendors/slick/slick.min.js"></script>
+<script type="text/javascript" src="assets/vendors/thellipsis.js"></script>
 <script src="assets/js/oniontabs-cart.js"></script>
 
 <?php if ($user->isLoggedIn()) { ?>
@@ -26,32 +31,21 @@
             <script src="https://unpkg.com/@yaireo/tagify@3.1.0/dist/tagify.polyfills.min.js"></script>
             <script src="assets/js/menus.js"></script>
         <?php } ?>
+        
         <script src="assets/js/vendor.js"></script>
     <?php } else { ?>
 
-        <?php if ($user->isLoggedIn() && (Input::get('page') && Input::get('page') == 'checkout') || (Input::get('action') && Input::get('page') == 'wallet')) { ?>
+        <?php if ($user->isLoggedIn() && (Input::get('page') && Input::get('page') == 'checkout') || 
+                    (Input::get('action') && Input::get('action') == 'wallet') || 
+                    (Input::get('action') && Input::get('action') == 'subscriptions')) { ?>
             <script src="https://js.paystack.co/v1/inline.js" SameSite="None"></script>
             <script src="https://checkout.flutterwave.com/v3.js"></script>
         <?php } ?>
-
+        
         <script src="assets/js/user.js"></script>
     <?php } ?>
 
     <script src="assets/js/dashboard.js"></script>
-<?php } ?>
-
-<?php if (Input::get('page') && Input::get('page') == 'vendor') { ?>
-    <script type="text/javascript" src="assets/vendors/slick/slick.min.js"></script>
-    <script>
-        $(".menu-slider--item").slick({
-            autoplay: true,
-            autoplaySpeed: 6000,
-            infinite: false,
-            arrows: false,
-            slidesToShow: 1,
-            centerMode: true,
-        });
-    </script>
 <?php } ?>
 
 <script src="assets/js/site.js"></script>

@@ -2,7 +2,9 @@
 require_once("../core/init.php");
 $user = new User();
 $cart = new Cart();
-$menus = new General('menus');
+$Subscriptions = new General('subscriptions');
+$SubscriptionPlans = new General('subscription_plans');
+$Menus = new General('menus');
 $Variations = new General('menu_variations');
 $Addons = new General('menu_addons');
 $wallets = new General('wallets');
@@ -14,6 +16,10 @@ $delivery_prices = new General('delivery_prices');
 $ref_rate = $settings->get('REFERRAL_RATE', 'title')->value;
 
 $result = array();
+
+
+$profile = $user->isLoggedIn() ? $user->getProfile() : null;
+
 if (Input::exists() && Input::get('req')) {
     switch (trim(Input::get('req'))) {
         case 'get-count':
@@ -32,6 +38,7 @@ if (Input::exists() && Input::get('req')) {
             break;
         case 'add-cart':
             try {
+                
                 if ($cart->add_to_cart(Input::get('pid'))) {
                     $result['success'] = array(
                         'count' => $cart->get_count(Input::get('pid')),
@@ -40,6 +47,7 @@ if (Input::exists() && Input::get('req')) {
                 } else {
                     $result['error'] = 'Failed to add item to cart';
                 }
+            
             } catch (Exception $e) {
                 $result['error'] = $e->getMessage();
             }
@@ -47,9 +55,18 @@ if (Input::exists() && Input::get('req')) {
         case 'add-variation-item':
             try {
                 if (Input::get('menu') && Input::get('variation')) {
+                    $menu = $Menus->get(Input::get('menu'));
                     $variation = $Variations->get(Input::get('variation'));
-
-                    if ($variation && $cart->add_variation(Input::get('menu'), $variation->id, $variation->price, $variation->variation)) {
+                    // print_r($cart->clear()); die;
+                    if(!$cart->get_cart(Input::get('menu')) && $cart->add_to_cart($menu->id)){
+                        $result['success'] = array(
+                            'count' => $cart->get_count(Input::get('pid')),
+                            'title' => 'Item added to cart',
+                        );
+                    }
+                    // print_r($cart->get_cart_json()); die;
+                    
+                    if ($variation && $cart->add_variation($menu->id, $variation->id, $variation->price, $variation->variation)) {
                         $result['success'] = array(
                             'menu' => json_encode($cart->get_cart(Input::get('menu'))),
                             'message' => 'Variation Set ',
@@ -71,8 +88,17 @@ if (Input::exists() && Input::get('req')) {
         case 'add-addon-item':
             try {
                 if (Input::get('menu') && Input::get('addon')) {
+                    $menu = $Menus->get(Input::get('menu'));
                     $addon = $Addons->get(Input::get('addon'));
-                    if ($addon && $cart->add_addon(Input::get('menu'), $addon->id, $addon->price, $addon->addon)) {
+                    
+                    if(!$cart->get_cart(Input::get('menu')) && $cart->add_to_cart($menu->id)){
+                        $result['success'] = array(
+                            'count' => $cart->get_count(Input::get('pid')),
+                            'title' => 'Item added to cart',
+                        );
+                    }
+                    
+                    if ($addon && $cart->add_addon($menu->id, $addon->id, $addon->price, $addon->addon)) {
                         $result['success'] = array(
                             'menu' => json_encode($cart->get_cart(Input::get('menu'))),
                             'message' => 'Addon Set',
@@ -236,20 +262,30 @@ if (Input::exists() && Input::get('req')) {
             }
             break;
 
-        case 'pay-ondelivery':
+        case 'pay-subscription':
             try {
                 if ($user->isLoggedIn() && !$cart->isEmpty()) {
                     if (1) {
+                        $today = data('Y-m-d');
+                        $today_meal = $SubscriptionHistory->getpages(1, 0, "WHERE user_id = $user->data()->id AND date_added = '$today'");
+                        if($today_meal){
+                            echo json_encode(array(
+                                'error' => true,
+                                'message' => "You have used your subscription package today."
+                            ));
+                            exit;
+                        }
+                        
                         $user = new User();
                         $cart = new Cart();
                         $orders = new General('orders');
                         $order_details = new General('order_details');
-                        $menus = new General('menus');
+                        $Menus = new General('menus');
                         $vendors = new General('vendors');
                         $categories = new General('categories');
-                        $notifications = new General('notifications');
-                        $notification_snippets = new General('notification_snippets');
-                        $sms_snippets = new General('sms_snippets');
+                        $Notifications = new General('notifications');
+                        $NotificationSnippets = new General('notification_snippets');
+                        $SmsSnippets = new General('sms_snippets');
 
                         $checkout = Session::exists('checkout') ? Session::get('checkout') : null;
                         $address =  $checkout && $checkout['billing'] ? json_decode($checkout['billing'])->address : null;
@@ -269,6 +305,12 @@ if (Input::exists() && Input::get('req')) {
                         $total_amount = $cart->get_total_amount(false, $delivery_price);
                         $order_id = '#' . Helpers::getUnique(6, 'd');
                         $invoice = Helpers::getUnique(6, 'd');
+                        
+                        // Create Subscription
+                        $SubscriptionHistory->create(array(
+                            'user_id' => $user->data()->id,
+                            'date_added' => $today,
+                        ));
 
                         // Create Order
                         $orders->create(array(
@@ -278,7 +320,7 @@ if (Input::exists() && Input::get('req')) {
                             'cart' => json_encode($cart_items),
                             'coupon' => Session::exists('coupon') ? Session::get('coupon')->percentage : null,
                             'delivery_price' => $delivery_price,
-                            'delivery_address' => $delivery,
+                            'delivery_address' => $address,
                             'menu_amount' => $cart_amount['price'],
                             'variations_amount' => $cart_amount['variation'],
                             'addons_amount' => $cart_amount['addon'],
@@ -296,13 +338,13 @@ if (Input::exists() && Input::get('req')) {
                         $item_tables = "";
                         $vendor_arr = array();
                         foreach ($cart_items as $item) {
-                            $menu = $menus->get($item['id']);
+                            $menu = $Menus->get($item['id']);
                             $vendor = $vendors->get($menu->user_id, 'user_id');
                             $category = $categories->get($menu->category);
 
                             $total_amount = $cart->get_amount($menu->id, null, false);
-                            $vendor_amount = $category && $category->percentage ? $total_amount - ($total_amount * ($category->percentage / 100)) : $total_amount;
                             $platform_amount = $category && $category->percentage ? ($total_amount * ($category->percentage / 100)) : 0;
+                            $vendor_amount = $category && $category->percentage ? $total_amount - $platform_amount : $total_amount;
 
                             $cart->update_cart($item['id'], $total_amount, 'total_amount');
                             $cart->update_cart($item['id'], $vendor_amount, 'vendor_amount');
@@ -321,14 +363,14 @@ if (Input::exists() && Input::get('req')) {
                                 array_push($vendor_arr, $vendor->id);
 
                                 // Send Notification
-                                $notifications->create(array(
-                                    'user_id' => $vendor->id,
+                                $Notifications->create(array(
+                                    'user_id' => $vendor->user_id,
                                     'subject' => "Order Placed",
-                                    'message' => str_replace(['[invoice]'], [$order_id], $notification_snippets->get('S_ORDER_PLACED', 'title')->message),
+                                    'message' => str_replace(['[invoice]'], [$order_id], $NotificationSnippets->get('S_ORDER_PLACED', 'title')->message),
                                 ));
 
                                 // Send OTP Message
-                                $message = str_replace(['otp'], ['none'], $sms_snippets->get("S_ORDER_NEW", 'title')->message);
+                                $message = str_replace(['otp'], ['none'], $SmsSnippets->get("S_ORDER_NEW", 'title')->message);
                                 Messages::sendSMS($vendor->phone, $message);
 
                                 // Send Order Message
@@ -378,16 +420,188 @@ if (Input::exists() && Input::get('req')) {
                             Session::exists('coupon') ? Session::delete('coupon') : null;
                             Session::exists('delivery_price') ? Session::delete('delivery_price') : null;
 
-                            $notifications->create(array(
+                            $Notifications->create(array(
                                 'user_id' => $user->data()->id,
                                 'subject' => "Order Placed",
-                                'message' => str_replace(['[invoice]'], [$order_id], $notification_snippets->get('B_ORDER_PLACED', 'title')->message),
+                                'message' => str_replace(['[invoice]'], [$order_id], $NotificationSnippets->get('B_ORDER_PLACED', 'title')->message),
                             ));
 
-                            $notifications->create(array(
+                            $Notifications->create(array(
                                 'user_id' => 0,
                                 'subject' => "Order Placed",
-                                'message' => str_replace(['[invoice]'], [$order_id], $notification_snippets->get('A_ORDER_PLACED', 'title')->message),
+                                'message' => str_replace(['[invoice]'], [$order_id], $NotificationSnippets->get('A_ORDER_PLACED', 'title')->message),
+                            ));
+
+                            Session::flash("success", "Congratulation! Payment made successfully.<br/>");
+                            echo json_encode(array(
+                                'success' => true,
+                                'to' => 'dashboard/order-complete',
+                                'message' => "Congratulation! Payment made successfully. Thank you."
+                            ));
+                            exit;
+                        }
+                    } else {
+                        $result['error'] = 'Something went wrong';
+                    }
+                } else {
+                    $result['error'] = 'Something went wrong, please try again later.';
+                }
+            } catch (Exception $e) {
+                $result['error'] = $e->getMessage();
+            }
+            break;
+        case 'pay-ondelivery':
+            try {
+                if ($user->isLoggedIn() && !$cart->isEmpty()) {
+                    if (1) {
+                        $user = new User();
+                        $cart = new Cart();
+                        $orders = new General('orders');
+                        $order_details = new General('order_details');
+                        $Menus = new General('menus');
+                        $vendors = new General('vendors');
+                        $categories = new General('categories');
+                        $Notifications = new General('notifications');
+                        $NotificationSnippets = new General('notification_snippets');
+                        $SmsSnippets = new General('sms_snippets');
+
+                        $checkout = Session::exists('checkout') ? Session::get('checkout') : null;
+                        $address =  $checkout && $checkout['billing'] ? json_decode($checkout['billing'])->address : null;
+                        $delivery =  $checkout && isset($checkout['delivery']) ? $checkout['delivery'] : null;
+                        $delivery_price =  $checkout && isset($checkout['delivery_price']) ? $checkout['delivery_price'] : null;
+                        $reffered_by =  $checkout && isset($checkout['reffered_by']) ? $checkout['reffered_by'] : null;
+
+                        $delivery_price = null;
+                        if (Session::exists('delivery_price')) {
+                            $delivery_price = Session::get('delivery_price');
+                            Session::delete('delivery_price');
+                        }
+
+                        $cart_items = $cart->get_cart();
+                        $cart_amount = $cart->get_cart_amount();
+
+                        $total_amount = $cart->get_total_amount(false, $delivery_price);
+                        $order_id = '#' . Helpers::getUnique(6, 'd');
+                        $invoice = Helpers::getUnique(6, 'd');
+
+                        // Create Order
+                        $orders->create(array(
+                            'user_id' => $user->data()->id,
+                            'order_id' => $order_id,
+                            'invoice' => $invoice,
+                            'cart' => json_encode($cart_items),
+                            'coupon' => Session::exists('coupon') ? Session::get('coupon')->percentage : null,
+                            'delivery_price' => $delivery_price,
+                            'delivery_address' => $address,
+                            'menu_amount' => $cart_amount['price'],
+                            'variations_amount' => $cart_amount['variation'],
+                            'addons_amount' => $cart_amount['addon'],
+                            'total_amount' => $cart->get_total_amount(false),
+                            'total_menus' => count($cart_items),
+                            'acknowledge_delivery' => 0,
+                            'acknowledge_cancel' => 0,
+                            'payment_method' => 'Pay On Delivery',
+                            'reffered_by' => $reffered_by,
+                            'vendors' => json_encode($cart->getVendors()),
+                            'status' => 'pending',
+                        ));
+
+                        // Implement percentage/commission on product amount and send message
+                        $item_tables = "";
+                        $vendor_arr = array();
+                        foreach ($cart_items as $item) {
+                            $menu = $Menus->get($item['id']);
+                            $vendor = $vendors->get($menu->user_id, 'user_id');
+                            $category = $categories->get($menu->category);
+
+                            $total_amount = $cart->get_amount($menu->id, null, false);
+                            $platform_amount = $category && $category->percentage ? ($total_amount * ($category->percentage / 100)) : 0;
+                            $vendor_amount = $category && $category->percentage ? $total_amount - $platform_amount : $total_amount;
+
+                            $cart->update_cart($item['id'], $total_amount, 'total_amount');
+                            $cart->update_cart($item['id'], $vendor_amount, 'vendor_amount');
+                            $cart->update_cart($item['id'], $platform_amount, 'platform_amount');
+
+                            $amount = Helpers::format_currency($item['amount']);
+                            $name = $item['name'];
+                            $qty = $item['quantity'];
+                            $item_tables .= "<tr>
+                                <td>{$name}</td>
+                                <td>{$amount}</td>
+                                <td>{$qty}</td>
+                            </tr>";
+
+                            if (!in_array($vendor->id, $vendor_arr)) {
+                                array_push($vendor_arr, $vendor->id);
+
+                                // Send Notification
+                                $Notifications->create(array(
+                                    'user_id' => $vendor->user_id,
+                                    'subject' => "Order Placed",
+                                    'message' => str_replace(['[invoice]'], [$order_id], $NotificationSnippets->get('S_ORDER_PLACED', 'title')->message),
+                                ));
+
+                                // Send OTP Message
+                                $message = str_replace(['otp'], ['none'], $SmsSnippets->get("S_ORDER_NEW", 'title')->message);
+                                Messages::sendSMS($vendor->phone, $message);
+
+                                // Send Order Message
+                                $message = "<p>You have a new order made to your store, please login your account and take neccessary action(s)</p>";
+                                $subject = "New Order Notification";
+                                Messages::send($message, $subject, $vendor->email, $vendor->name, true);
+                            }
+
+                            // Order Details
+                            $menu_cart_amount = $cart->get_cart_amount($menu->id, $vendor->id);
+                            $total_amount = $menu_cart_amount['total'];
+                            $vendor_amount = $category && $category->percentage ? $total_amount - ($total_amount * ($category->percentage / 100)) : $total_amount;
+                            $platform_amount = $category && $category->percentage ? ($total_amount * ($category->percentage / 100)) : 0;
+
+                            $order_details->create(array(
+                                'user_id' => $user->data()->id,
+                                'order_id' => $order_id,
+                                'vendor_id' => $vendor->id,
+                                'menu' => $menu->id,
+                                'variations' => json_encode($cart->getVariations($menu->id)),
+                                'addons' => json_encode($cart->getAddons($menu->id)),
+                                'quantity' => $item['quantity'],
+                                'amount' => $item['amount'],
+                                'total_amount' => $total_amount,
+                                'vendor_amount' => $vendor_amount,
+                                'platform_amount' => $platform_amount,
+                                'status' => 'pending',
+                            ));
+                        }
+
+
+                        if (!$orders->get($user->data()->id, 'user_id')) {
+                            Messages::firstOrder($user->data()->first_name . ' ' . $user->data()->last_name, $user->data()->email);
+                        }
+
+                        $message = "<p>You have a new order made, please login your account and take neccessary action(s)</p>";
+                        $subject = "New Order Notification";
+                        Messages::send($message, $subject, Messages::MAIN_EMAIL, "Admin", true);
+
+                        Messages::orderConfirmation($user->data()->first_name . ' ' . $user->data()->last_name, $user->data()->email, $order_id, date('Y-m-d', time()), $cart->get_total_amount(), $address, $item_tables);
+
+                        $coupon = Session::exists('coupon') ? json_encode(Session::get('coupon')) : null;
+                        Session::put('checkout', array_merge(Session::get('checkout'), array('order_id' => $order_id, 'invoice' => $invoice, 'coupon' => $coupon)));
+                        $cart->clear();
+
+                        if (empty($errors)) {
+                            Session::exists('coupon') ? Session::delete('coupon') : null;
+                            Session::exists('delivery_price') ? Session::delete('delivery_price') : null;
+
+                            $Notifications->create(array(
+                                'user_id' => $user->data()->id,
+                                'subject' => "Order Placed",
+                                'message' => str_replace(['[invoice]'], [$order_id], $NotificationSnippets->get('B_ORDER_PLACED', 'title')->message),
+                            ));
+
+                            $Notifications->create(array(
+                                'user_id' => 0,
+                                'subject' => "Order Placed",
+                                'message' => str_replace(['[invoice]'], [$order_id], $NotificationSnippets->get('A_ORDER_PLACED', 'title')->message),
                             ));
 
                             Session::flash("success", "Congratulation! Payment made successfully.<br/>");
@@ -423,12 +637,12 @@ if (Input::exists() && Input::get('req')) {
                         $cart = new Cart();
                         $orders = new General('orders');
                         $order_details = new General('order_details');
-                        $menus = new General('menus');
+                        $Menus = new General('menus');
                         $vendors = new General('vendors');
                         $categories = new General('categories');
-                        $notifications = new General('notifications');
-                        $notification_snippets = new General('notification_snippets');
-                        $sms_snippets = new General('sms_snippets');
+                        $Notifications = new General('notifications');
+                        $NotificationSnippets = new General('notification_snippets');
+                        $SmsSnippets = new General('sms_snippets');
 
                         $checkout = Session::exists('checkout') ? Session::get('checkout') : null;
                         $address =  $checkout && $checkout['billing'] ? json_decode($checkout['billing'])->address : null;
@@ -448,6 +662,11 @@ if (Input::exists() && Input::get('req')) {
                         $total_amount = $cart->get_total_amount(false, $delivery_price);
                         $order_id = '#' . Helpers::getUnique(6, 'd');
                         $invoice = Helpers::getUnique(6, 'd');
+                        
+                        // Remove money from wallet
+                        $wallets->update(array(
+                            'balance' => $uwallet->balance - $total_amount,
+                        ), $uwallet->id);
 
                         // Create Order
                         $orders->create(array(
@@ -457,7 +676,7 @@ if (Input::exists() && Input::get('req')) {
                             'cart' => json_encode($cart_items),
                             'coupon' => Session::exists('coupon') ? Session::get('coupon')->percentage : null,
                             'delivery_price' => $delivery_price,
-                            'delivery_address' => $delivery,
+                            'delivery_address' => $address,
                             'menu_amount' => $cart_amount['price'],
                             'variations_amount' => $cart_amount['variation'],
                             'addons_amount' => $cart_amount['addon'],
@@ -465,7 +684,7 @@ if (Input::exists() && Input::get('req')) {
                             'total_menus' => count($cart_items),
                             'acknowledge_delivery' => 0,
                             'acknowledge_cancel' => 0,
-                            'payment_method' => 'Pay On Delivery',
+                            'payment_method' => 'Wallet',
                             'reffered_by' => $reffered_by,
                             'vendors' => json_encode($cart->getVendors()),
                             'status' => 'pending',
@@ -475,7 +694,7 @@ if (Input::exists() && Input::get('req')) {
                         $item_tables = "";
                         $vendor_arr = array();
                         foreach ($cart_items as $item) {
-                            $menu = $menus->get($item['id']);
+                            $menu = $Menus->get($item['id']);
                             $vendor = $vendors->get($menu->user_id, 'user_id');
                             $category = $categories->get($menu->category);
 
@@ -500,14 +719,14 @@ if (Input::exists() && Input::get('req')) {
                                 array_push($vendor_arr, $vendor->id);
 
                                 // Send Notification
-                                $notifications->create(array(
-                                    'user_id' => $vendor->id,
+                                $Notifications->create(array(
+                                    'user_id' => $vendor->user_id,
                                     'subject' => "Order Placed",
-                                    'message' => str_replace(['[invoice]'], [$order_id], $notification_snippets->get('S_ORDER_PLACED', 'title')->message),
+                                    'message' => str_replace(['[invoice]'], [$order_id], $NotificationSnippets->get('S_ORDER_PLACED', 'title')->message),
                                 ));
 
                                 // Send OTP Message
-                                $message = str_replace(['otp'], ['none'], $sms_snippets->get("S_ORDER_NEW", 'title')->message);
+                                $message = str_replace(['otp'], ['none'], $SmsSnippets->get("S_ORDER_NEW", 'title')->message);
                                 Messages::sendSMS($vendor->phone, $message);
 
                                 // Send Order Message
@@ -557,16 +776,16 @@ if (Input::exists() && Input::get('req')) {
                             Session::exists('coupon') ? Session::delete('coupon') : null;
                             Session::exists('delivery_price') ? Session::delete('delivery_price') : null;
 
-                            $notifications->create(array(
+                            $Notifications->create(array(
                                 'user_id' => $user->data()->id,
                                 'subject' => "Order Placed",
-                                'message' => str_replace(['[invoice]'], [$order_id], $notification_snippets->get('B_ORDER_PLACED', 'title')->message),
+                                'message' => str_replace(['[invoice]'], [$order_id], $NotificationSnippets->get('B_ORDER_PLACED', 'title')->message),
                             ));
 
-                            $notifications->create(array(
+                            $Notifications->create(array(
                                 'user_id' => 0,
                                 'subject' => "Order Placed",
-                                'message' => str_replace(['[invoice]'], [$order_id], $notification_snippets->get('A_ORDER_PLACED', 'title')->message),
+                                'message' => str_replace(['[invoice]'], [$order_id], $NotificationSnippets->get('A_ORDER_PLACED', 'title')->message),
                             ));
 
                             Session::flash("success", "Congratulation! Payment made successfully.<br/>");

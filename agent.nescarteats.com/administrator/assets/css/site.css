@@ -1,0 +1,43 @@
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.75rem;
+
+  /* Color */
+  --color-primary: #008e8c;
+  --color-primary-dark: #007e7c;
+  --color-primary-light: #f9ffff;
+  --color-accent: #ef9244;
+  --color-black: #000000;
+  --color-black-shade: #666666;
+  --color-white: #ffffff;
+  --color-light: #fdfdfd;
+  
+  --mp-color-black: #000000;
+  --mp-color-white: #ffffff;
+}
+
+/* Menu */
+.icon-menu {
+  filter: invert(1);
+}
+
+/* Resets */
+.card {
+  border-radius: 0.8rem !important;
+}
+
+/* .btn {
+  background: var(--mp-color-black);
+} */
+
+.btn .btn-primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #3d464d;
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}

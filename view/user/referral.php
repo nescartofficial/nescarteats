@@ -8,6 +8,8 @@ $us = $user->data();
 $profile = $user->getProfile();
 $countries = $world->getCountries();
 
+$referral_count = $user->getAll($us->uid, 'reffered_by', '=');
+
 $form_data = Session::exists('profile_fd') ? Session::get('profile_fd') : null;
 
 Alerts::displayError();
@@ -44,17 +46,37 @@ Alerts::displaySuccess();
                 <div class="card shadow mb-5">
                     <div class="card-body">
                         <p class="mb-0">Referred Downlines</p>
-                        <h2 class="mb-0"><?= 0 ?></h2>
+                        <h2 class="mb-0"><?= $referral_count ? count($referral_count) : 0 ?></h2>
                     </div>
                 </div>
 
                 <div class="card bg-primary--light shadow mb-5">
                     <div class="card-body">
                         <p class="mb-2">Referral Links</p>
-                        <input type="text" value="<?= $user->data()->uid; ?>" class="form-control text-white bg-primary" disabled>
+                        <div class="input-group">
+                            <input type="text" id="referral_link" value="<?= SITE_URL ?>sign-up?refferal=<?= $user->data()->uid; ?>" class="form-control text-white bg-primary" disabled>
+                            <button onclick="copy2Clipboard()" class="copy2Clipboard input-group-text btn btn-sm">Copy</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+function copy2Clipboard() {
+    // Get the text field
+    var copyText = document.getElementById("referral_link");
+    
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+    
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+    
+    // Alert the copied text
+    document.querySelector('.copy2Clipboard').innerHTML = "Copied!";
+}
+</script>

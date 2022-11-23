@@ -1,10 +1,27 @@
-[04-Aug-2022 15:21:39 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/controllers/checkout.php on line 130
-[04-Aug-2022 15:21:52 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/controllers/checkout.php on line 130
-[04-Aug-2022 16:34:16 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/controllers/checkout.php on line 130
-[04-Aug-2022 16:42:58 Africa/Lagos] PHP Notice:  Array to string conversion in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 191
-[04-Aug-2022 16:47:28 Africa/Lagos] PHP Notice:  Undefined variable: v in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 228
-[04-Aug-2022 16:47:28 Africa/Lagos] PHP Notice:  Undefined variable: v in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 229
-[04-Aug-2022 16:47:28 Africa/Lagos] PHP Notice:  Undefined variable: v in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 230
-[04-Aug-2022 16:47:28 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$name in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 254
-[04-Aug-2022 16:51:25 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$name in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 255
-[04-Aug-2022 16:51:25 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$name in /home2/nescartc/public_html/eats/controllers/oniontabs-cart-get.php on line 255
+[12-Sep-2022 15:10:05 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[12-Sep-2022 15:12:48 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[12-Sep-2022 15:33:22 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[13-Sep-2022 13:01:25 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[13-Sep-2022 13:12:05 Africa/Lagos] PHP Notice:  Trying to get property 'message' of non-object in /home/oniontab/websites/nescarteats.com/controllers/orders.php on line 165
+[13-Sep-2022 13:37:45 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[13-Sep-2022 13:38:01 Africa/Lagos] PHP Notice:  Trying to get property 'message' of non-object in /home/oniontab/websites/nescarteats.com/controllers/orders.php on line 170
+[13-Sep-2022 13:42:08 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[15-Sep-2022 12:37:42 Africa/Lagos] PHP Notice:  Undefined variable: user in /home/oniontab/websites/nescarteats.com/controllers/agents.php on line 160
+[15-Sep-2022 12:37:42 Africa/Lagos] PHP Fatal error:  Uncaught Error: Call to a member function data() on null in /home/oniontab/websites/nescarteats.com/controllers/agents.php:160
+Stack trace:
+#0 {main}
+  thrown in /home/oniontab/websites/nescarteats.com/controllers/agents.php on line 160
+[15-Sep-2022 17:07:08 Africa/Lagos] PHP Notice:  Undefined variable: Wallets in /home/oniontab/websites/nescarteats.com/controllers/agent-vendors.php on line 233
+[15-Sep-2022 17:07:08 Africa/Lagos] PHP Fatal error:  Uncaught Error: Call to a member function create() on null in /home/oniontab/websites/nescarteats.com/controllers/agent-vendors.php:233
+Stack trace:
+#0 {main}
+  thrown in /home/oniontab/websites/nescarteats.com/controllers/agent-vendors.php on line 233
+[15-Sep-2022 17:09:20 Africa/Lagos] PHP Notice:  Undefined index: state in /home/oniontab/websites/nescarteats.com/models/validate.php on line 19
+[15-Sep-2022 17:09:20 Africa/Lagos] PHP Notice:  Undefined index: city in /home/oniontab/websites/nescarteats.com/models/validate.php on line 19
+[16-Sep-2022 11:14:20 Africa/Lagos] PHP Notice:  Undefined variable: Wallets in /home/oniontab/websites/nescarteats.com/controllers/agent-vendors.php on line 230
+[16-Sep-2022 11:14:20 Africa/Lagos] PHP Fatal error:  Uncaught Error: Call to a member function create() on null in /home/oniontab/websites/nescarteats.com/controllers/agent-vendors.php:230
+Stack trace:
+#0 {main}
+  thrown in /home/oniontab/websites/nescarteats.com/controllers/agent-vendors.php on line 230
+[10-Oct-2022 22:18:14 Africa/Lagos] PHP Notice:  Undefined variable: menus_img in /home/oniontab/websites/nescarteats.com/controllers/menus.php on line 130
+[10-Oct-2022 22:18:14 Africa/Lagos] PHP Notice:  Undefined variable: product_pre in /home/oniontab/websites/nescarteats.com/controllers/menus.php on line 147

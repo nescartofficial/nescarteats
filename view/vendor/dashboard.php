@@ -6,7 +6,7 @@ $enquiries = new General('enquiries');
 $unread = count($enquiries->getAllByUser(0, 'status', $user->data()->id));
 !$user->isLoggedIn() ? Redirect::to('../login') : null;
 
-$views = $user->isVendor() ? 'view/vendor' : 'view/user';
+$views = 'view/vendor';
 
 
 // if ($user->data()->phone_otp) {

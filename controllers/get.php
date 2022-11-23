@@ -1,6 +1,7 @@
 <?php
 require_once("../core/init.php");
 $user = new User();
+$SubscriptionPlans = new General('subscription_plans');
 $car_makes = new General('car_make');
 $car_models = new General('car_model');
 $categories = new General('categories');
@@ -163,6 +164,27 @@ if (Input::exists() && Input::get('req')) {
             'phone' => $user->data()->phone,
             'token' => Token::generate(),
             'amount' => Input::get('amount'),
+          );
+        } else {
+          $result['error'] = 'Something went wrong, please try again later.';
+        }
+      } else {
+        $result['error'] = 'Something went wrong, please try again later.';
+      }
+      break;
+    case 'pay-subscription':
+      if ($user->isLoggedIn()) {
+        if (Input::get('plan')) {
+            $plan = $SubscriptionPlans->get(Input::get('plan'));
+          $result['success'] = array(
+            'req' => 'pay-subscription',
+            'type' => 'pay',
+            'to' => 'dashboard/subscriptions',
+            'plan' => $plan->id,
+            'amount' => $plan->amount,
+            'email' => $user->data()->email,
+            'phone' => $user->data()->phone,
+            'token' => Token::generate(),
           );
         } else {
           $result['error'] = 'Something went wrong, please try again later.';

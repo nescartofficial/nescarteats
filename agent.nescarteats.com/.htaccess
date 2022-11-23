@@ -1,0 +1,20 @@
+RewriteEngine On 
+#remember to come back here when you upload this project online
+RewriteCond %{THE_REQUEST} ^.*/index\.php 
+RewriteRule ^(.*)index\.php$ /gv/$1 [R=301,L]
+RewriteEngine On
+
+RewriteRule ^([A-Za-z0-9\-%-+]+)$ ?page=$1&%{QUERY_STRING} [l]
+RewriteRule ^([A-Za-z0-9\-%-+]+)$ ?page=$1&%{QUERY_STRING} [l]
+
+RewriteRule ^([a-z]+)$ ?page=$1 [l]
+RewriteRule ^([a-z-+]+)$ ?page=$1 [l]
+
+RewriteRule ^([a-z]+)/([a-z0-9]+)$ ?page=$1&action=$2&%{QUERY_STRING} [l]
+RewriteRule ^([a-z-+]+)/([a-z0-9-+]+)$ ?page=$1&action=$2&%{QUERY_STRING} [l]
+
+RewriteRule ^([a-z]+)/([a-z]+)/([A-Za-z0-9-\%-+]+)$ ?page=$1&action=$2&sub=$3&%{QUERY_STRING} [l]
+RewriteRule ^([a-z-+]+)/([a-z-+]+)/([A-Za-z0-9-\%-+]+)$ ?page=$1&action=$2&sub=$3&%{QUERY_STRING} [l]
+
+RewriteRule ^([a-z]+)/([a-z]+)/([A-Za-z0-9\-%-+]+)/([A-Za-z0-9\%-+]+)$ ?page=$1&action=$2&sub=$3&sub1=$4&%{QUERY_STRING} [l]
+RewriteRule ^([a-z-+]+)/([a-z-+]+)/([A-Za-z0-9\-%-+]+)/([A-Za-z0-9\%-+]+)$ ?page=$1&action=$2&sub=$3&sub1=$4&%{QUERY_STRING} [l]

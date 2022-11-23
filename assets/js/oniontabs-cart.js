@@ -100,7 +100,7 @@
 		switch (datapay.type) {
 			case 'pay':
 				var handler = PaystackPop.setup({
-					key: 'pk_test_f81ed953d02a5d7c0f40c154748364980ca7e943', // test
+					key: 'pk_test_79a9bcf62f6cc3dea92bb38212241b85f9b86f0a', // test
 					email: datapay.email, // the customer email
 					amount: parseFloat(datapay.price) * 100,
 					ref: datapay.ref, // unique reference use hash uniquw
@@ -126,7 +126,7 @@
 								var result = JSON.parse(results);
 							}
 							if (typeof result.success == 'boolean' && result.success) {
-								window.location.replace('order-complete');
+        						result.to ? window.location.replace(result.to) : window.location.replace('dashboard/order-complete');
 
 							} else {
 								console.log(results);
@@ -163,6 +163,7 @@
 				if (result.success) {
 					result.to ? window.location.replace(result.to) : window.location.replace('dashboard/order-complete');
 				} else {
+				    $("#checkout_order").html('Proceed to payment').removeAttr('disabled');
 					alertToast(result.error);
 				}
 			}
@@ -187,10 +188,18 @@
 	$('body').on('click', '.add-cart', function (e) {
 		e.preventDefault();
 		
-		pid = $(this).data('pid');
-		data = $('#addcart_form').serialize();
+		const add_btn = $(this);
+		
+		const is_force = $(this).data('force');
+		const pid = $(this).data('pid');
+		const quantity = $(".item-quantity-" + pid)
+		const amount = $('.cart-menu-amount')
+		const total = $('.cart-total-amount')
+		const amount_dp = $('.cart-total-amount-dp')
+		const data = $('#addcart_form').serialize();
 		if (pid) {
-			wdata = data + '&pid=' + pid + '&req=add-cart&rtype=html';
+		    force_add = is_force ? '&force=true' : '';
+			wdata = data + '&pid=' + pid + '&req=add-cart&rtype=html'+force_add;
 			processHttpRequests('controllers/oniontabs-cart-get.php', wdata, 'json').then(function (result) {
 				if (typeof result == 'object') {
 					if (result.success) {
@@ -201,11 +210,22 @@
 						e.target.parentElement.classList.remove('btn-primary');
 						e.target.parentElement.classList.add('btn-link');
 						e.target.parentElement.classList.add('active');
-						e.target.innerText = 'Added to cart';
+				        
+				        // 		
+						add_btn.removeClass('add-cart').addClass('btn-outline-accent').attr("data-bs-dismiss", "modal").text('Added to Cart');
+						
+				        // Set Counter
+						quantity.val(result.success.quantity).text(result.success.quantity);
+						amount.text(result.success.amount);
+						total.text(result.success.total_amount);
+						amount_dp.text(result.success.total_amount);
 
 						$('.cart-count').text(result.success.count);
 					} else {
-						// alertToast(result.error);
+					    add_btn.parent().parent().before("<p class='error-info small fs-14p text-danger mt-2 text-center'>You have meal from another restaurant in cart. if you continue, all your previous meal from cart will be removed. <a href='#' data-force='true' class='add-cart' data-pid='"+pid+"'>Do you want to continue?</a></p>");
+					    setTimeout(function () { // wait for 5 secs(2)
+							add_btn.parent().parent().find('p.error-info').remove();
+						}, 5000);
 					}
 				}
 			});
@@ -232,6 +252,9 @@
 
 	$('body').on('click', '.menu-variation', function (e) {
 		e.preventDefault();
+		
+		variation_body = $(this).parent().parent().parent();
+		
 		$('.menu-variation-btn').removeClass('active');
 		$(this).next().addClass('active');
 		
@@ -249,8 +272,12 @@
 						$('.cart-count').text(result.success.count);
 						quantity.val(result.success.quantity).text(result.success.quantity);
 						$('.cart-menu-amount').text(result.success.amount);
+						
 					} else {
-
+					    variation_body.append("<p class='error-info small fs-14p text-danger mt-2 text-center'>Menu need to be added to cart first</p>");
+					    setTimeout(function () { // wait for 5 secs(2)
+							variation_body.find('p.error-info').remove();
+						}, 3000);
 					}
 				}
 			});
@@ -288,6 +315,9 @@
 
 	$('body').on('click', '.menu-addon', function (e) {
 		e.preventDefault();
+		
+		addon_body = $(this).parent().parent().parent();
+		
 		addon_btn = $(this).next();
 		addon_quantity = $(this).next().find('.menu-addon-quantity');
 
@@ -313,7 +343,10 @@
 						quantity.val(result.success.quantity).text(result.success.quantity);
 						$('.cart-menu-amount').text(result.success.amount);
 					} else {
-
+					    addon_body.append("<p class='error-info small fs-14p text-danger mt-2 text-center'>Menu need to be added to cart first</p>");
+					    setTimeout(function () { // wait for 5 secs(2)
+							addon_body.find('p.error-info').remove();
+						}, 3000);
 					}
 				}
 			});
@@ -450,7 +483,6 @@
 				dinfo.html('');
 			}, 5000);
 		} else {
-
 			wdata = 'amount=' + amount + '&req=fund-wallet&rtype=html';
 			processHttpRequests('controllers/get.php', wdata, 'json').then(function (result) {
 				if (typeof result == 'object') {
@@ -470,7 +502,40 @@
 				}
 			});
 		}
+	});
+	
+	$(".pay-subscription").on('click', function (e) {
+		e.preventDefault();
+        
+		dinfo = $('.info');
+		// $(this).html("<i class='fa fa-spinner  fa-pulse'></i>");
 
+		plan = $(this).data('subscription');
+		if (!plan) {
+			$(this).before('<p class="text-danger text-center small mb-2">Enter an plan to fund.</p>');
+			setTimeout(function () { // wait for 5 secs(2)
+				dinfo.html('');
+			}, 5000);
+		} else {
+			wdata = 'plan=' + plan + '&req=pay-subscription&rtype=html';
+			processHttpRequests('controllers/get.php', wdata, 'json').then(function (result) {
+				if (typeof result == 'object') {
+					if (result.success) {
+						datapay = { 'req': result.success.req, 'email': result.success.email, 'phone': result.success.phone, 'ref': result.success.token, 'price': result.success.amount, 'type': result.success.type, 'to': result.success.to, };
+				        // payWithPayStack(datapay);
+				        payWithFlutterwave(datapay);
+					} else {
+						dinfo.addClass('text-center text-danger').text(result.error);
+						setTimeout(function () { // wait for 5 secs(2)
+							dinfo.html('');
+							$(this).html("Pay: 2000");
+						}, 5000);
+
+
+					}
+				}
+			});
+		}
 	});
 
 	$(".cart-nav").on("click", function (e) {
@@ -495,6 +560,9 @@
 
 	$('#checkout_order').on('click', function (e) {
 		e.preventDefault();
+		
+		btn = $(this);
+		btn.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...').attr('disabled', true)
 
 		values = {};
 		pay_form = $('#payment_form');
@@ -509,7 +577,7 @@
 
 			wdata = 'data=' + data + '&req=checkout&action=' + action + '&rtype=html';
 			processHttpRequests('controllers/oniontabs-cart-get.php', wdata, 'json').then(function (result) {
-				if (typeof result == 'object') {
+				if (typeof result == 'object' && result.success) {
 					if (result.success.method == 'card') {
 						datapay = { 'req': result.success.req, 'email': result.success.email, 'phone': result.success.phone, 'ref': result.success.ref, 'price': result.success.amount, 'type': result.success.type, };
 						payWithPayStack(datapay);
@@ -522,13 +590,17 @@
 						payWith('pay-wallet');
 					}else if (result.success.method == 'ondelivery') {
 						payWith('pay-ondelivery');
+					}else if (result.success.method == 'subscription') {
+						payWith('pay-subscription');
 					}
 
 				} else {
-					console.log("failed");
+        		    btn.html('Proceed to payment').removeAttr('disabled');
+				// 	console.log("failed");
 				}
 			});
-
+		}else{
+		    btn.html('Proceed to payment').removeAttr('disabled');
 		}
 	});
 

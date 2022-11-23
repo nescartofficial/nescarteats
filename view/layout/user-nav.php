@@ -71,7 +71,7 @@ $user_id = $user->data()->id;
     </div>
 </nav>
 
-<?php if (Input::get('action') == 'cart' || Input::get('action') == 'checkout') { ?>
+<?php if (Input::get('page') && Input::get('page') == 'cart' || Input::get('page') == 'checkout') { ?>
 <?php } else { ?>
     <a href="cart" class="<?= $cart->isEmpty() ? 'd-none' : null; ?> nav-cart rounded px-2 d-flex fixed-bottom bg-accent align-items-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 61.751 58.778">
@@ -87,7 +87,7 @@ $user_id = $user->data()->id;
 <?php } ?>
 
 <?php if ($user->isLoggedIn() && !$user->data()->vendor) { ?>
-    <nav class="fixed-bottom container-fluid mobile bg-white pb-3 pt-4 d-lg-none">
+    <nav class="fixed-bottom container-fluid mobile bg-white pb-3 pt-3 d-lg-none">
         <div class="container d-flex gap-3 justify-content-between">
             <a class="nav-link <?= !Input::get('action') ? 'active' : null; ?>" href="dashboard">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56.263" height="49.854" viewBox="0 0 56.263 49.854">
@@ -122,6 +122,15 @@ $user_id = $user->data()->id;
                 </svg>
 
                 <span class="d-block">Orders</span>
+            </a>
+
+            <a class="nav-link <?= Input::get('action') && Input::get('action') == 'subscriptions' ? 'active' : null; ?>" href="dashboard/subscriptions">
+                <?php if (Input::get('action') && Input::get('action') == 'subscriptions') { ?>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#008e8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;!--!  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;<polyline points="9 11 3 11 3 5"></polyline><path d="M3,10.88s.06-.13.18-.34.3-.53.54-.9.52-.8.86-1.26.73-1,1.17-1.44A16.53,16.53,0,0,1,7.2,5.49,12.56,12.56,0,0,1,8.91,4.23a8.53,8.53,0,0,1,1.94-.89A7,7,0,0,1,13,3a6.55,6.55,0,0,1,1.41.16,5.81,5.81,0,0,1,1.31.46,6.85,6.85,0,0,1,1.19.72,7.34,7.34,0,0,1,1,1,7.06,7.06,0,0,1,.85,1.16,7.9,7.9,0,0,1,.65,1.34"></path><polyline points="15 13 21 13 21 19"></polyline><path d="M21,13.12s-.06.13-.18.34-.3.53-.54.9-.52.8-.86,1.26-.73,1-1.17,1.44a16.53,16.53,0,0,1-1.45,1.45,12.56,12.56,0,0,1-1.71,1.26,8.53,8.53,0,0,1-1.94.89A7,7,0,0,1,11,21a6.55,6.55,0,0,1-1.41-.16,5.81,5.81,0,0,1-1.31-.46,6.85,6.85,0,0,1-1.19-.72,7.34,7.34,0,0,1-1-1,7.06,7.06,0,0,1-.85-1.16,7.9,7.9,0,0,1-.65-1.34"></path></svg>
+                <?php } else { ?>    
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;!--!  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;<polyline points="9 11 3 11 3 5"></polyline><path d="M3,10.88s.06-.13.18-.34.3-.53.54-.9.52-.8.86-1.26.73-1,1.17-1.44A16.53,16.53,0,0,1,7.2,5.49,12.56,12.56,0,0,1,8.91,4.23a8.53,8.53,0,0,1,1.94-.89A7,7,0,0,1,13,3a6.55,6.55,0,0,1,1.41.16,5.81,5.81,0,0,1,1.31.46,6.85,6.85,0,0,1,1.19.72,7.34,7.34,0,0,1,1,1,7.06,7.06,0,0,1,.85,1.16,7.9,7.9,0,0,1,.65,1.34"></path><polyline points="15 13 21 13 21 19"></polyline><path d="M21,13.12s-.06.13-.18.34-.3.53-.54.9-.52.8-.86,1.26-.73,1-1.17,1.44a16.53,16.53,0,0,1-1.45,1.45,12.56,12.56,0,0,1-1.71,1.26,8.53,8.53,0,0,1-1.94.89A7,7,0,0,1,11,21a6.55,6.55,0,0,1-1.41-.16,5.81,5.81,0,0,1-1.31-.46,6.85,6.85,0,0,1-1.19-.72,7.34,7.34,0,0,1-1-1,7.06,7.06,0,0,1-.85-1.16,7.9,7.9,0,0,1-.65-1.34"></path></svg>
+                <?php } ?>
+                <span class="d-block">Subscriptions</span>
             </a>
 
             <a class="nav-link <?= Input::get('action') && Input::get('action') == 'settings' ? 'active' : null; ?>" href="dashboard/settings">

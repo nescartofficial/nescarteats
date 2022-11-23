@@ -1,0 +1,25 @@
+[12-Sep-2022 15:10:05 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[12-Sep-2022 15:12:48 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[12-Sep-2022 15:33:22 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[13-Sep-2022 13:01:25 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[13-Sep-2022 13:12:05 Africa/Lagos] PHP Notice:  Trying to get property 'message' of non-object in /home/oniontab/websites/nescarteats.com/controllers/orders.php on line 165
+[13-Sep-2022 13:37:45 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[13-Sep-2022 13:38:01 Africa/Lagos] PHP Notice:  Trying to get property 'message' of non-object in /home/oniontab/websites/nescarteats.com/controllers/orders.php on line 170
+[13-Sep-2022 13:42:08 Africa/Lagos] PHP Notice:  Undefined index: price in /home/oniontab/websites/nescarteats.com/models/cart.php on line 399
+[16-Sep-2022 12:15:57 Africa/Lagos] PHP Notice:  Trying to get property 'account_type' of non-object in /home/oniontab/websites/nescarteats.com/vendor.nescarteats.com/controllers/login.php on line 29
+[16-Sep-2022 12:16:23 Africa/Lagos] PHP Notice:  Trying to get property 'account_type' of non-object in /home/oniontab/websites/nescarteats.com/vendor.nescarteats.com/controllers/login.php on line 29
+[16-Sep-2022 12:16:58 Africa/Lagos] PHP Notice:  Trying to get property 'account_type' of non-object in /home/oniontab/websites/nescarteats.com/vendor.nescarteats.com/controllers/login.php on line 29
+[16-Sep-2022 12:17:12 Africa/Lagos] PHP Notice:  Trying to get property 'account_type' of non-object in /home/oniontab/websites/nescarteats.com/vendor.nescarteats.com/controllers/login.php on line 29
+[16-Sep-2022 12:20:23 Africa/Lagos] PHP Notice:  Trying to get property 'account_type' of non-object in /home/oniontab/websites/nescarteats.com/vendor.nescarteats.com/controllers/login.php on line 29
+[16-Sep-2022 12:28:31 Africa/Lagos] PHP Notice:  Trying to get property 'account_type' of non-object in /home/oniontab/websites/nescarteats.com/vendor.nescarteats.com/controllers/login.php on line 32
+[16-Sep-2022 12:28:40 Africa/Lagos] PHP Notice:  Trying to get property 'account_type' of non-object in /home/oniontab/websites/nescarteats.com/vendor.nescarteats.com/controllers/login.php on line 32
+[16-Sep-2022 12:29:25 Africa/Lagos] PHP Notice:  Trying to get property 'account_type' of non-object in /home/oniontab/websites/nescarteats.com/vendor.nescarteats.com/controllers/login.php on line 32
+[16-Sep-2022 12:29:37 Africa/Lagos] PHP Notice:  Trying to get property 'account_type' of non-object in /home/oniontab/websites/nescarteats.com/vendor.nescarteats.com/controllers/login.php on line 32
+[16-Sep-2022 12:29:43 Africa/Lagos] PHP Notice:  Trying to get property 'account_type' of non-object in /home/oniontab/websites/nescarteats.com/vendor.nescarteats.com/controllers/login.php on line 32
+[16-Nov-2022 19:57:02 Africa/Lagos] PHP Notice:  Undefined index: country in /home/oniontab/websites/nescarteats.com/models/validate.php on line 19
+[16-Nov-2022 19:57:02 Africa/Lagos] PHP Notice:  Undefined index: reason in /home/oniontab/websites/nescarteats.com/models/validate.php on line 19
+[16-Nov-2022 19:57:02 Africa/Lagos] PHP Notice:  Undefined index: reason in /home/oniontab/websites/nescarteats.com/models/validate.php on line 19
+[16-Nov-2022 19:57:02 Africa/Lagos] PHP Notice:  Undefined index: reason in /home/oniontab/websites/nescarteats.com/models/validate.php on line 19
+[16-Nov-2022 19:57:02 Africa/Lagos] PHP Notice:  Undefined index: organization in /home/oniontab/websites/nescarteats.com/models/validate.php on line 19
+[16-Nov-2022 19:57:02 Africa/Lagos] PHP Notice:  Undefined index: organization in /home/oniontab/websites/nescarteats.com/models/validate.php on line 19
+[16-Nov-2022 19:57:02 Africa/Lagos] PHP Notice:  Undefined index: organization in /home/oniontab/websites/nescarteats.com/models/validate.php on line 19

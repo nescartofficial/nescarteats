@@ -14,10 +14,14 @@ $profile = $user->getProfile();
 $user_id = $user->data()->id;
 
 // Meal
-$menu_near_me = $menus->getAllNearMe($profile->state, $profile->city);
+$menu_near_me = $menus->getAllNearMe($profile->state, $profile->city, 8);
+// Popular Meal
+$popular_menu_near_me = $menus->getPopularMeals($profile->state, $profile->city, 8);
 
 // Vendor
 $vendor_near_me = $vendors->getAllNearMe($profile->state, $profile->city);
+// Top Vendor
+$top_vendor_near_me = $vendors->getTops($profile->state, $profile->city, 8);
 
 // Nav counters
 $unread_notification_count = $pagination->countAll('notifications', "WHERE id > 0 AND user_id = {$user_id} AND status = 0");
@@ -90,10 +94,10 @@ Alerts::displaySuccess();
                                 <?php } ?>
                             </div>
 
-                            <div class="ms-3">
+                            <div class="mx-3">
                                 <p class="mb-0 fs-14p text-muted">Delivery Address</p>
                                 <div class="d-flex">
-                                    <address class="fw-bold fs-16p mb-0 text-truncate me-2">
+                                    <address class="fw-bold fs-16p mb-0 me-2">
                                         <?= $profile->address ?>
                                     </address>
                                     <a href="dashboard/profile">
@@ -160,7 +164,7 @@ Alerts::displaySuccess();
     <!-- Popular Meals -->
     <section class="container-fluid site-section-b">
         <div class="container">
-            <?php Component::render('menu', array('data' => $menus->getAll(1, 'status', '='), 'type' => 'list', 'title' => "Popular Meals")); ?>
+            <?php Component::render('menu', array('data' => $popular_menu_near_me, 'type' => 'list', 'title' => "Popular Meals")); ?>
         </div>
     </section>
 
@@ -176,7 +180,7 @@ Alerts::displaySuccess();
     <!-- Top Vendors -->
     <section class="container-fluid site-section-b">
         <div class="container">
-            <?php Component::render('vendor', array('data' => $vendors->getAll(1, 'status', '='), 'type' => 'list', 'title' => "Top Vendors")); ?>
+            <?php Component::render('vendor', array('data' => $top_vendor_near_me, 'type' => 'list', 'title' => "Top Vendors")); ?>
         </div>
     </section>
 

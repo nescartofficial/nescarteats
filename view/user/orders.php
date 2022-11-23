@@ -76,8 +76,8 @@ Alerts::displaySuccess();
                                 $item_list = $OrderDetails->getAll($con->order_id, 'order_id', '=');
 
                                 $status = $con->status == 'pending' ? array('title' => 'Pending', 'color' => 'text-accent') : 'Rejected';
-                                $status = $con->status == 'awaiting' ? array('title' => 'Awaiting Delivery', 'color' => 'text-accent') : $status;
-                                $status = $con->status == 'completed' ? array('title' => 'Awaiting Delivery', 'color' => 'text-green') : $status;
+                                $status = $con->status == 'picked' ? array('title' => 'Awaiting Delivery', 'color' => 'text-accent') : $status;
+                                $status = $con->status == 'completed' ? array('title' => 'Delivered', 'color' => 'text-green') : $status;
 
                                 Component::render('order', array('data' => $con, 'count' => count($item_list), 'type' => 'list', 'status' => $status), 'view/user/component');
                             } ?>
@@ -92,8 +92,8 @@ Alerts::displaySuccess();
                                 $item_list = $OrderDetails->getAll($con->order_id, 'order_id', '=');
 
                                 $status = $con->status == 'pending' ? array('title' => 'Pending', 'color' => 'text-accent') : 'Rejected';
-                                $status = $con->status == 'awaiting' ? array('title' => 'Awaiting Delivery', 'color' => 'text-accent') : $status;
-                                $status = $con->status == 'completed' ? array('title' => 'Awaiting Delivery', 'color' => 'text-green') : $status;
+                                $status = $con->status == 'picked' ? array('title' => 'Awaiting Delivery', 'color' => 'text-accent') : $status;
+                                $status = $con->status == 'completed' ? array('title' => 'Delivered', 'color' => 'text-green') : $status;
 
                                 Component::render('order', array('data' => $con, 'count' => count($item_list), 'type' => 'list', 'status' => $status), 'view/user/component');
                             } ?>
@@ -107,8 +107,8 @@ Alerts::displaySuccess();
                             $item_list = $OrderDetails->getAll($con->order_id, 'order_id', '=');
 
                             $status = $con->status == 'pending' ? array('title' => 'Pending', 'color' => 'text-accent') : 'Rejected';
-                            $status = $con->status == 'awaiting' ? array('title' => 'Awaiting Delivery', 'color' => 'text-accent') : $status;
-                            $status = $con->status == 'completed' ? array('title' => 'Awaiting Delivery', 'color' => 'text-green') : $status;
+                            $status = $con->status == 'picked' ? array('title' => 'Awaiting Delivery', 'color' => 'text-accent') : $status;
+                            $status = $con->status == 'completed' ? array('title' => 'Awaiting Delivery', 'color' => 'text-success') : $status;
 
                             Component::render('order', array('data' => $con, 'count' => count($item_list), 'type' => 'list', 'status' => $status), 'view/user/component');
                         } ?>

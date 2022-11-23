@@ -2,6 +2,8 @@
 require_once('core/init.php');
 $user = isset($user) ? $user : new User();
 $world = new World();
+$Subscriptions = new General('subscriptions');
+$SubscriptionPlans = new General('subscription_plans');
 $profiles = new General('profiles');
 $addresses = new General('addresses');
 $pickups = new General('pickup_points');
@@ -36,6 +38,10 @@ $total_amount = $cart_amount['total'];
 $amount = $Cart->get_total_amount();
 $coupon = Session::exists('coupon') ? Session::get('coupon') : null;
 $delivery_fee = Session::exists('delivery_price') ? Session::get('delivery_price') : null;
+
+// Subscription
+$user_subscription = $Subscriptions->getByUser('active', 'status', $user->data()->id);
+$user_plan = $user_subscription ? $SubscriptionPlans->get($user_subscription->plan) : null;
 
 Alerts::displayError();
 Alerts::displaySuccess();
@@ -84,9 +90,9 @@ Alerts::displaySuccess();
             <div class="" id="delivery_addr">
                 <div class="row">
                     <div class="col-md-6 mb-4">
-                        <div class="btn-group-toggle" data-toggle="buttons">
-                            <div class="card">
-                                <label class="btn bg-white px-3 py-2 rounded">
+                        <div class="btn-group-toggle h-100" data-toggle="buttons">
+                            <div class="card rounded h-100 ">
+                                <label class="btn bg-white px-3 py-2 rounded h-100">
                                     <div class="d-flex align-items-baseline justify-content-between">
                                         <div class="d-flex align-items-center">
                                             <img src="assets/icons/wallet.svg" class="h-30p me-3">
@@ -102,11 +108,32 @@ Alerts::displaySuccess();
                             </div>
                         </div>
                     </div>
+                    
+                    <?php if($user_subscription){ ?>
+                    <div class="col-md-6 mb-4">
+                        <div class="btn-group-toggle h-100" data-toggle="buttons">
+                            <div class="card rounded h-100 ">
+                                <label class="btn bg-white px-3 py-2 rounded h-100">
+                                    <div class="d-flex align-items-baseline justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <img src="assets/icons/wallet.svg" class="h-30p me-3">
+                                            <div class="text-start text-black flex-fill">
+                                                <h5 class="mb-0">Pay with Subscription</h5>
+                                                <p class="fs-10p mb-0 d-block">You are subscribed to the <b><?= $user_plan->plan; ?></b> plan and your daily spend limit is <?= Helpers::format_currency($user_plan->daily_amount) ?></p>
+                                            </div>
+                                        </div>
+                                        <input name="payment_method" value="subscription" type="radio" class="checkout_delivery">
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
 
                     <div class="col-md-6 mb-4">
-                        <div class="btn-group-toggle" data-toggle="buttons">
-                            <div class="card">
-                                <label class="btn bg-white px-3 py-2 rounded">
+                        <div class="btn-group-toggle h-100" data-toggle="buttons">
+                            <div class="card rounded h-100">
+                                <label class="btn bg-white px-3 py-2 rounded h-100">
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex align-items-center">
                                             <img src="assets/icons/Flutterwave.svg" class="h-30p me-3">
@@ -123,9 +150,9 @@ Alerts::displaySuccess();
                     </div>
 
                     <div class="col-md-6 mb-4">
-                        <div class="btn-group-toggle" data-toggle="buttons">
-                            <div class="card">
-                                <label class="btn bg-white px-3 py-2 rounded">
+                        <div class="btn-group-toggle h-100" data-toggle="buttons">
+                            <div class="card rounded h-100">
+                                <label class="btn bg-white px-3 py-2 rounded h-100">
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex align-items-center">
                                             <img src="assets/icons/Paystack.svg" class="h-30p me-3">
@@ -143,9 +170,9 @@ Alerts::displaySuccess();
 
 
                     <div class="col-md-6 mb-4">
-                        <div class="btn-group-toggle" data-toggle="buttons">
-                            <div class="card h-100">
-                                <label class="btn bg-white px-3 py-2 rounded">
+                        <div class="btn-group-toggle h-100" data-toggle="buttons">
+                            <div class="card rounded h-100">
+                                <label class="btn bg-white px-3 py-2 rounded h-100">
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex align-items-center">
                                             <img src="assets/icons/stack.svg" class="h-30p me-3">
@@ -209,7 +236,7 @@ Alerts::displaySuccess();
                 </div>
 
                 <footer class="mt-5">
-                    <button type="submit" class="btn bg-white text-black fw-bold w-100" id="checkout_order" data-position="payment">Proceed to payment</button>
+                    <button type="submit" class="btn text-black fw-bold w-100" id="checkout_order" data-position="payment">Proceed to payment</button>
                 </footer>
             </div>
         </div>

@@ -74,6 +74,40 @@ if (Helpers::isXHR() && Input::exists() && isset($_POST['ref'])) {
                     }
 
                     break;
+                case "pay-subscription":
+                    try {
+                        $user = new User();
+                        $Subscriptions = new General('subscriptions');
+                        $SubscriptionPlans = new General('subscription_plans');
+                        $wallet = new General('wallets');
+                        
+                        $amount = $result['data']['amount'];
+                        $plan = $result['data']['plan'];
+                        $plan = $SubscriptionPlans->get($plan);
+                        
+                        $Subscriptions->create(array(
+                            'user_id' => $user->data()->id,
+                            'plan' => $plan->id,
+        					'start_at' => date('Y-m-d H:i:s', time()),
+                            'end_at' => date("Y-m-d h:i:sa", strtotime("+1 Months")),
+                            'status' => 'active'
+                        ));
+
+                        // message
+                        if (empty($errors)) {
+                            Session::flash("success", "Subscribed successfully");
+                            echo json_encode(array(
+                                'success' => true,
+                                'to' => 'dashboard/subscriptions',
+                                'message' => "Congratulation! Payment made successfully, your transaction reference is: {$data['ref']}. Thank you."
+                            ));
+                            exit;
+                        }
+                    } catch (Exception $e) {
+                        $errors[] = $e->getMessage();
+                    }
+
+                    break;
                 case "pay":
                     try {
                         $user = new User();
@@ -114,7 +148,7 @@ if (Helpers::isXHR() && Input::exists() && isset($_POST['ref'])) {
                             'cart' => json_encode($cart_items),
                             'coupon' => Session::exists('coupon') ? Session::get('coupon')->percentage : null,
                             'delivery_price' => $delivery_price,
-                            'delivery_address' => $delivery,
+                            'delivery_address' => $address,
                             'menu_amount' => $cart_amount['price'],
                             'variations_amount' => $cart_amount['variation'],
                             'addons_amount' => $cart_amount['addon'],
@@ -122,7 +156,7 @@ if (Helpers::isXHR() && Input::exists() && isset($_POST['ref'])) {
                             'total_menus' => count($cart_items),
                             'acknowledge_delivery' => 0,
                             'acknowledge_cancel' => 0,
-                            'payment_method' => 'Pay On Delivery',
+                            'payment_method' => 'Flutterwave',
                             'reffered_by' => $reffered_by,
                             'vendors' => json_encode($cart->getVendors()),
                             'status' => 'pending',
@@ -137,8 +171,8 @@ if (Helpers::isXHR() && Input::exists() && isset($_POST['ref'])) {
                             $category = $categories->get($menu->category);
 
                             $total_amount = $cart->get_amount($menu->id, null, false);
-                            $vendor_amount = $category && $category->percentage ? $total_amount - ($total_amount * ($category->percentage / 100)) : $total_amount;
                             $platform_amount = $category && $category->percentage ? ($total_amount * ($category->percentage / 100)) : 0;
+                            $vendor_amount = $category && $category->percentage ? $total_amount - $platform_amount : $total_amount;
 
                             $cart->update_cart($item['id'], $total_amount, 'total_amount');
                             $cart->update_cart($item['id'], $vendor_amount, 'vendor_amount');
@@ -158,7 +192,7 @@ if (Helpers::isXHR() && Input::exists() && isset($_POST['ref'])) {
 
                                 // Send Notification
                                 $notifications->create(array(
-                                    'user_id' => $vendor->id,
+                                    'user_id' => $vendor->user_id,
                                     'subject' => "Order Placed",
                                     'message' => str_replace(['[invoice]'], [$order_id], $notification_snippets->get('S_ORDER_PLACED', 'title')->message),
                                 ));

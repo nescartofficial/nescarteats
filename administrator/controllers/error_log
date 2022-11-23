@@ -14,3 +14,5 @@
 [26-Jul-2022 13:39:32 Africa/Lagos] PHP Notice:  Undefined variable: image in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 188
 [26-Jul-2022 13:39:32 Africa/Lagos] PHP Notice:  Undefined variable: sfound in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 190
 [26-Jul-2022 13:39:32 Africa/Lagos] PHP Notice:  Trying to get property 'id' of non-object in /home2/nescartc/public_html/eats/administrator/controllers/specialcat.php on line 190
+[15-Sep-2022 11:13:30 Africa/Lagos] PHP Notice:  Undefined property: stdClass::$email in /home/oniontab/websites/nescarteats.com/administrator/controllers/agents.php on line 30
+[17-Nov-2022 20:56:12 Africa/Lagos] PHP Notice:  Undefined index: status in /home/oniontab/websites/nescarteats.com/models/validate.php on line 19

@@ -1,3 +1,6 @@
+<?php
+$User = new User();
+?>
 <header class="container-fluid hero">
     <div class="container">
         <div class="row min-vh-100 align-items-center">
@@ -10,12 +13,15 @@
                     <img src="assets/images/element/Nescart Eats Topper.png" alt="Nescart Eat" class="img-fluid icon">
                     <p class="mb-0 fs-5 fw-bold">When you are too busy to cook, we are just a click away!</p>
                 </div>
-
-                <div class="text-center text-lg-start">
-                    <a href="find-vendors" class="btn d-block d-lg-inline-block me-md-5 mb-4 mb-lg-0">
-                        Find Food Vendors</a>
-                    <a href="vendor">Become a Vendor</a>
-                </div>
+                
+                    <div class="text-center text-lg-start">
+                        <a href="find-vendors" class="btn d-block d-lg-inline-block me-md-5 mb-4 mb-lg-0">
+                            Find Food Vendors</a>
+                            
+                        <?php if(!$User->isLoggedIn()){ ?>
+                            <a href="<?= VENDOR_URL ?>">Become a Vendor</a>
+                        <?php } ?>
+                    </div>
             </div>
             <div class="col-lg-5 d-none d-lg-block">
                 <img src="assets/images/Hero Image.png" alt="Nescart Eat" class="img-fluid">
@@ -105,28 +111,30 @@
 </section>
 
 
-<section class="container-fluid fast-delivery site-section-b">
-    <div class="container">
-        <div class="card br-lg bg-black border-0">
-            <div class="card-body">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-5">
-                        <h2 class="fs-heading text-white">Partner with Nescart Eats Today!</h2>
-
-                        <img src="assets/images/Partner  with Nescart Eat.png" alt="Nescart Eat" class="img-fluid my-4 d-lg-none">
-
-                        <p class="text-white">Take your restaurant business online and acquire more customers.</p>
-
-                        <a href="vendor" class="btn bg-primary mt-4">Become a Vendor</a>
-                    </div>
-                    <div class="col-lg-5 d-none d-lg-block">
-                        <img src="assets/images/Partner  with Nescart Eat.png" alt="Nescart Eat" class="img-fluid">
+<?php if(!$User->isLoggedIn()){ ?>
+    <section class="container-fluid fast-delivery site-section-b">
+        <div class="container">
+            <div class="card br-lg bg-black border-0">
+                <div class="card-body">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-lg-5">
+                            <h2 class="fs-heading text-white">Partner with Nescart Eats Today!</h2>
+    
+                            <img src="assets/images/Partner  with Nescart Eat.png" alt="Nescart Eat" class="img-fluid my-4 d-lg-none">
+    
+                            <p class="text-white">Take your restaurant business online and acquire more customers.</p>
+    
+                            <a href="<?= VENDOR_URL ?>" class="btn bg-primary mt-4">Become a Vendor</a>
+                        </div>
+                        <div class="col-lg-5 d-none d-lg-block">
+                            <img src="assets/images/Partner  with Nescart Eat.png" alt="Nescart Eat" class="img-fluid">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php } ?>
 
 
 <section class="container-fluid features site-section-b">
@@ -211,40 +219,16 @@
             <div class="card-body">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-lg-5">
-                        <h2 class="fs-heading">More Food, Less Money! Subscribe to Our Meal Plans.</h2>
+                        <h2 class="fs-heading mb-3">More Food, Less Money! Subscribe to Our Meal Plans.</h2>
 
-                        <p class="">Nescart Eats offers you a choice of 1 meal every day for a month when you Subscribe to any of our Meal Plans!</p>
+                        <img src="assets/images/subscriptions.png" alt="subscription" class="img-fluid mt-1 mb-4 d-lg-none">
+                        
+                        <p class="text-dark">Nescart Eats offers you a choice of 1 meal every day for a month when you Subscribe to any of our Meal Plans!</p>
 
-                        <a href="sign-up" class="btn bg-primary mt-4">Get Started</a>
+                        <a href="subscriptions" class="btn bg-primary mt-4">Get Started</a>
                     </div>
                     <div class="col-lg-5 d-none d-lg-block">
-                        <div class="hstack gap-5 mb-3">
-                            <div class="card">
-                                <div class="card-body sm-padding">
-                                    <h5 class="mb-0">Basic Plan</h5>
-                                </div>
-                            </div>
-
-                            <div class="card mt-lg-4">
-                                <div class="card-body sm-padding">
-                                    <h5 class="mb-0">Premium Plan</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="hstack gap-5">
-                            <div class="card">
-                                <div class="card-body sm-padding">
-                                    <h5 class="mb-0">Exclusive Plan</h5>
-                                </div>
-                            </div>
-
-                            <div class="card mt-lg-4">
-                                <div class="card-body sm-padding">
-                                    <h5 class="mb-0">SMEs Plan</h5>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="assets/images/subscriptions.png" alt="subscription" class="img-fluid">
                     </div>
                 </div>
             </div>

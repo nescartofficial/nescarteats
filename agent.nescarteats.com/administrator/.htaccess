@@ -1,0 +1,47 @@
+#RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+#RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteEngine On 
+#RewriteCond %{HTTP_HOST} ^whofundme\.com [NC]
+#RewriteCond %{SERVER_PORT} 80 
+#RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+#RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+#RewriteRule ^(.*)$ https://www.whofundme.com/$1 [R=301,L]
+
+#remember to come back here when you upload this project online
+RewriteCond %{THE_REQUEST} ^.*/index\.php 
+RewriteRule ^(.*)index\.php$ /gv/$1 [R=301,L]
+RewriteEngine On
+
+RewriteRule ^([a-z]+)$ ?page=$1&%{QUERY_STRING} [l]
+RewriteRule ^([a-z-+]+)$ ?page=$1&%{QUERY_STRING} [l]
+
+# register referal
+RewriteRule ^([a-z]+)/ref/([A-Za-z0-9\%-+]+)$ ?page=$1&ref=$2&%{QUERY_STRING} [l]
+RewriteRule ^([a-z-+]+)/ref/([A-Za-z0-9\%-+]+)$ ?page=$1&ref=$2&%{QUERY_STRING} [l]
+
+RewriteRule ^([a-z]+)/([a-z]+)$ ?page=$1&action=$2&%{QUERY_STRING} [l]
+RewriteRule ^([a-z-+]+)/([a-z-+]+)$ ?page=$1&action=$2&%{QUERY_STRING} [l]
+
+RewriteRule ^([a-z]+)/([a-z]+)/([A-Za-z0-9\-%-+]+)$ ?page=$1&action=$2&sub=$3&%{QUERY_STRING} [l]
+RewriteRule ^([a-z-+]+)/([a-z-+]+)/([A-Za-z0-9\-%-+]+)$ ?page=$1&action=$2&sub=$3&%{QUERY_STRING} [l]
+
+RewriteRule ^([a-z]+)/([a-z]+)/([A-Za-z0-9\-%-+]+)/([A-Za-z0-9\-%-+]+)$ ?page=$1&action=$2&sub=$3&sub1=$4&%{QUERY_STRING} [l]
+RewriteRule ^([a-z-+]+)/([a-z-+]+)/([A-Za-z0-9\-%-+]+)/([A-Za-z0-9\-%-+]+)$ ?page=$1&action=$2&sub=$3&sub1=$4&%{QUERY_STRING} [l]
+
+#browse house next button
+RewriteRule ^([a-z]+)/([a-z]+)/([A-Za-z0-9\%-+]+)/next/([A-Za-z0-9\%-+]+)$ ?page=$1&action=$2&sub=$3&sub1=$4 [l]
+RewriteRule ^([a-z-+]+)/([a-z-+]+)/([A-Za-z0-9\%-+]+)/next/([A-Za-z0-9\%-+]+)$ ?page=$1&action=$2&sub=$3&sub1=$4 [l]
+
+RewriteRule ^([a-z]+)/([a-z]+)/([0-9]+)$ ?page=$1&action=$2&id=$3 [l]
+RewriteRule ^([a-z-+]+)/([a-z-+]+)/([0-9]+)$ ?page=$1&action=$2&id=$3 [l]
+
+#RewriteRule ^category/([A-Za-z-+]+)$ ?category=$1 [l]
+#RewriteRule ^product/([A-Za-z0-9\%-+]+)$ ?product=$1 [l]
+#RewriteRule ^customer/([A-Za-z+-]+)$ ?customer=$1 [l]
+#RewriteRule ^customer/([A-Za-z+-]+)/([0-9]+)$ ?customer=$1&next=$2 [l]
+#RewriteRule ^customer/([A-Za-z+-]+)/([a-zA-Z]+)/([0-9]+)$ ?customer=$1&mode=$2&id=$3 [l]
+#RewriteRule ^customer/([A-Za-z+]+)/([A-Za-z]+)$ ?customer=$1&section=$2 [l]
+#RewriteRule ^category/([A-Za-z+]+)$ ?category=$1 [l]
+#RewriteRule ^page/cart/([0-9]+)$ ?page=cart&next=$1 [l]
+#RewriteRule ^page/([a-z]+)/([a-zA-Z-]+)$ ?page=$1&category=$2 [l]
+#RewriteRule ^page/([a-z]+)/([a-zA-Z'-+]+)$ ?page=$1&title=$2 [l]

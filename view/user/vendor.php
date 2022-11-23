@@ -88,11 +88,56 @@ Alerts::displaySuccess();
 
                 <hr class="col-12 text-primary mb-4">
 
-                <?php if ($about_page) { ?>
+                <?php if ($review_page) { ?>
+                
+                    <div class="col-12 mb-4">
+                        <h2><?= $vendor->name; ?></h2>
+        
+                        <div class="d-flex justify-content-between">
+                            <p class="fs-14p mb-0 fw-bold">
+                                <i class="fa fa-star"></i> 233 Reviews
+                            </p>
+                            <p class="fs-14p mb-0 fw-bold">
+                                <i class="fa fa-badge"></i> 4.5 Rating
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div class="col-12 mb-5">
+                        <h4>Write a review</h4>
+                        <p class="fs-16p mb-5">
+                            Share your experience to help others.</p>
+        
+                        <form action="controllers/reviews.php" name="reviews_form" id="reviews_form" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="rq" value="vendor-review">
+                            <input type="hidden" name="vendor_slug" value="<?= $vendor->slug; ?>">
+                            <input type="hidden" name="vendor_id" value="<?= $vendor->id; ?>">
+                            <input type="hidden" name="token" value="<?php echo Session::exists('token') ? Session::get('token') : Token::generate(); ?>">
+                            <input type="hidden" name="id" value="<?= $review->id; ?>">
+        
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <textarea type="text" name="review" value="" id="review" class="form-control" placeholder="Write a review here" required style="min-height: 120px"><?= $review ? $review->review : ($form_data ? $form_data['review'] : null); ?></textarea>
+                                </div>
+                            </div>
+        
+                            <div class="mt-2">
+                                <button type="submit" class="btn bg-accent"><?= $review ? 'Update' :  'Submit'; ?> Review</button>
+                            </div>
+                        </form>
+                    </div>
+        
+                    <div class="col-12">
+                        <?php Component::render('review', array('data' => $review_list, 'type' => 'list', 'title' => "Reviews from others.")); ?>
+                    </div>
+                    
+                <?php }else if ($about_page) { ?>
+                
                     <h4 class="mb-3">About</h4>
                     <div class="about-content">
                         <?= $vendor->about; ?>
                     </div>
+                    
                 <?php } else { ?>
                     <!-- Special Meals -->
                     <section class="col-12 mb-4">

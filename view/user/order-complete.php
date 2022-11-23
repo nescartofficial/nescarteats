@@ -69,9 +69,7 @@ Alerts::displaySuccess();
 
                 <p class="my-4">Your order is being picked<br /> up by the courier</p>
 
-                <button class="btn bg-accent w-100 mb-4"> Track Order</button>
-
-                <a href="dashboard/order-details/<?= $invoice ?>" class="text-accent">See Order Details</a>
+                <a href="dashboard/order-details/<?= $invoice ?>" class="btn bg-accent w-100 mb-4"> See Order Details</a>
             </div>
 
         </div>

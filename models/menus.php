@@ -92,16 +92,46 @@ class Menus
         return false;
     }
 
+    // Get Popular Meal
+    public function getPopularMeals($state, $city = null, $limit = null, $where = null) // by state
+    {
+        // if (!$this->_db->query("SELECT id, menu, COUNT(*) AS total FROM order_details GROUP BY menu {$where} ORDER BY total DESC")->error()) {
+        //     return $this->_db->results();
+        // }
+        $city = $city ? " AND vendors.city = {$city}" : null;
+        $limit = $limit ? " LIMIT {$limit}" : null;
+        $where = $where ? " WHERE vendors.state = {$state} AND {$where}" : " WHERE vendors.state = {$state} ";
+        
+        if (!$this->_db->query(
+            "SELECT menus.id, menus.title, menus.vendor_id, menus.price, menus.cover, menus.image, menus.slug, COUNT(*) AS total
+            FROM order_details AS d
+            INNER JOIN menus ON d.menu = menus.id
+            INNER JOIN vendors ON d.vendor_id = vendors.id
+            {$where} 
+            {$city}
+            GROUP BY d.menu
+            ORDER BY total DESC
+            {$limit}", array($state))->error()) {
+                
+            return $this->_db->results();
+        }
+        return false;
+    }
+    
     // Get All Near Me
-    public function getAllNearMe($state, $city = null, $opt = false) // by state
+    public function getAllNearMe($state, $city = null, $limit = null, $opt = false, $where = null) // by state
     {
         $city = $city ? " AND vendors.city = {$city}" : null;
+        $limit = $limit ? " LIMIT {$limit}" : null;
+        $where = $where ? " WHERE vendors.state = {$state} AND {$where}" : " WHERE vendors.state = {$state} ";
+        
         if (!$this->_db->query("SELECT menus.id, menus.title, menus.vendor_id, menus.price, menus.cover, menus.image, menus.slug
                                 FROM {$this->_table}
                                 INNER JOIN vendors
                                 ON {$this->_table}.vendor_id = vendors.id
-                                WHERE vendors.state = {$state} 
-                                {$city}", array($state))->error()) {
+                                {$where} 
+                                {$city}
+                                {$limit}", array($state))->error()) {
             if ($opt) {
                 $html = "";
                 foreach ($this->_db->results() as $k => $menu) {

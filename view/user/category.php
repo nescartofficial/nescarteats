@@ -30,7 +30,7 @@ Alerts::displaySuccess();
     </header>
 
     <!-- Popular Meals -->
-    <section class="container-fluid mb-5">
+    <section class="mb-5">
         <div class="container">
             <?php Component::render('menu', array('data' => $menus->getAll($category->id, 'category', '='), 'type' => 'list', 'title' => null)); ?>
         </div>

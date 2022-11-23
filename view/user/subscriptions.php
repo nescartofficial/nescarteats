@@ -3,10 +3,20 @@ include_once('core/init.php');
 $user = isset($user) ? $user : new User();
 !$user->isLoggedIn() ? Redirect::to('login') : null;
 $world = new World();
+$Menus = new Menus();
+$Subscriptions = new General('subscriptions');
+$SubscriptionPlans = new General('subscription_plans');
 
 $us = $user->data();
 $profile = $user->getProfile();
 $countries = $world->getCountries();
+
+$plans = $SubscriptionPlans->getAll(1, 'status', '=');
+
+$user_subscription = $Subscriptions->getByUser('active', 'status', $user->data()->id);
+$user_plan = $user_subscription ? $SubscriptionPlans->get($user_subscription->plan) : null;
+
+$plan_meals = $Menus->getAllNearMe($profile->state, $profile->city, null, false, " menus.price <= {$user_plan->daily_amount} ");
 
 $form_data = Session::exists('profile_fd') ? Session::get('profile_fd') : null;
 
@@ -31,53 +41,55 @@ Alerts::displaySuccess();
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <p class="fs-16p mb-5">
+                <p class="fs-16p mb-5 text-center">
                     Select a monthly meal package and begin to enjoy daily delicious meals delivered to you.</p>
 
 
-                <section class="subscription-slider mb-6">
-                    <div class="card shadow mb-3">
-                        <div class="card-body text-center py-5">
-                            <h2 class="mb-4">Premium</h2>
-
-                            <p class="mb-4">Get two meals per day delivered to you.</p>
-
-                            <h1 class="text-accent mb-4">N19,500.00</h1>
-
-                            <button class="btn bg-accent mt-2"> Select Package</button>
-                        </div>
-                    </div>
-                    <div class="card bg-primary shadow mb-3">
-                        <div class="card-body text-center py-5">
-                            <h2 class="text-white mb-4">Premium</h2>
-
-                            <p class="text-white mb-4">Get two meals per day delivered to you.</p>
-
-                            <h1 class="text-white mb-4">N19,500.00</h1>
-
-                            <button class="btn bg-accent mt-2"> Select Package</button>
-                        </div>
-                    </div>
-                    <div class="card bg-black shadow mb-3">
-                        <div class="card-body text-center py-5">
-                            <h2 class="text-white mb-4">Premium</h2>
-
-                            <p class="text-white mb-4">Get two meals per day delivered to you.</p>
-
-                            <h1 class="text-white mb-4">N19,500.00</h1>
-
-                            <button class="btn bg-accent mt-2"> Select Package</button>
-                        </div>
-                    </div>
+                <section class="row mb-6">
+                    
+                    <?php if(!$user_plan && $plans){ ?>
+                        <?php foreach($plans as $plan){ ?>
+                            <div class="col-lg-4">
+                                <div class="card <?= $plan->classes ?> shadow mb-3">
+                                    <div class="card-body text-center py-5">
+                                        <h2 class="mb-4 <?= $plan->text_color ?>"><?= $plan->plan; ?></h2>
+            
+                                        <p class="mb-4 <?= $plan->text_color ?>"><?= $plan->short_description; ?></p>
+            
+                                        <h1 class=" <?= $plan->text_color ?> mb-4"><?= Helpers::format_currency($plan->amount); ?></h1>
+            
+                                        <button class="btn <?= $plan->classes == 'bg-accent' || $plan->classes == 'bg-black' ? 'bg-primary text-white' : 'bg-accent'; ?> mt-2 pay-subscription" data-subscription="<?= $plan->id; ?>"> Select Package</button>
+                                        
+                                        <a href="subscriptions" class="d-block <?= $plan->classes != 'bg-accent' ? 'text-white' : null; ?> mt-3">Learn more about <?= $plan->plan; ?></a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    <?php } ?>
+                    
                 </section>
 
                 <div class="card-body bg-white shadow rounded py-3 mb-5">
-                    <p class="fw-bold mb-0">
-                        Current Plan</p>
-                    <p class="mb-0 fs-16p">
-                        You are not on any subscription plan</p>
+                    <p class="fw-bold mb-0">Current Plan</p>
+                    <?php if($user_plan){ ?>
+                        <p class="mb-0 fs-16p">You are subscribed to the <b><?= $user_plan->plan; ?></b> plan and your daily spend limit is <?= Helpers::format_currency($user_plan->daily_amount) ?></p>
+                    <?php }else{ ?>
+                        <p class="mb-0 fs-16p">You are not on any subscription plan</p>
+                    <?php } ?>
                 </div>
 
+                <?php if($plan_meals){ ?>
+                    <div class="card-body bg-white shadow rounded py-3 mb-5">
+                        <p class="fw-bold mb-0">Menus</p>
+                        <p class="mb-0 fs-16p">Find a meal today.</p>
+                    </div>
+                    
+                    <?php Component::render('menu', array('data' => $plan_meals, 'type' => 'list', 'title' => null)); ?>
+                <?php } ?>
+                
+                
+                
+                
                 <div class="card-body bg-white shadow rounded py-3 mb-5">
                     <p class="fw-bold mb-0">
                         Meals Plan History</p>
