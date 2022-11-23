@@ -12,9 +12,9 @@ date_default_timezone_set('Africa/Lagos');
 // global configuration array
 $GLOBALS['config'] = array(
 	'mysql' => array(
-		'host' => 'localhost',
-		'username' => 'oniontab_website',
-		'password' => '+%[=hiH8N-Ci',
+		'host' => 'nescarteatsdbserver.mysql.database.azure.com',
+		'username' => 'nescarteatsdbadmin',
+		'password' => 'aT5d6mITGm@L3KWk%i7K@D',
 		'db' => 'oniontab_website_nescarteats'
 	),
 
