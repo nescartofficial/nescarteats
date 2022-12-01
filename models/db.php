@@ -12,7 +12,12 @@ class DB
 	private function __construct()
 	{
 		try {
-			$this->_pdo = new PDO('mysql: host=' . Config::get('mysql/host') . '; dbname=' . Config::get('mysql/db'), Config::get('mysql/username'), Config::get('mysql/password'));
+			// $this->_pdo = new PDO('mysql: host=' . Config::get('mysql/host') . '; dbname=' . Config::get('mysql/db'), Config::get('mysql/username'), Config::get('mysql/password'));
+			$servername = "nescarteatsdbserver.mysql.database.azure.com";
+			$username = "nescarteatsdbadmin";
+			$password = "aT5d6mITGm@L3KWk%i7K@D";
+			$db = "oniontab_website_nescarteats";
+			$this->_pdo = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
 		} catch (PDOException $e) {
 			die($e->getMessage());
 		}
